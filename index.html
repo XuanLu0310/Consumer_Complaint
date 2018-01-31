@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+<meta name="author" content="Xuan Lu" />
+
+<meta name="date" content="2017-11-11" />
+
+<title>Consumer Complaints Working Progress Report</title>
+
+<script src="Consumer_Complaints_xlu__1__files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="Consumer_Complaints_xlu__1__files/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<script src="Consumer_Complaints_xlu__1__files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="Consumer_Complaints_xlu__1__files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="Consumer_Complaints_xlu__1__files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="Consumer_Complaints_xlu__1__files/navigation-1.1/tabsets.js"></script>
+<script src="Consumer_Complaints_xlu__1__files/htmlwidgets-0.9/htmlwidgets.js"></script>
+<script src="Consumer_Complaints_xlu__1__files/plotly-binding-4.7.1/plotly.js"></script>
+<script src="Consumer_Complaints_xlu__1__files/typedarray-0.1/typedarray.min.js"></script>
+<link href="Consumer_Complaints_xlu__1__files/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="Consumer_Complaints_xlu__1__files/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<link href="Consumer_Complaints_xlu__1__files/plotlyjs-1.29.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="Consumer_Complaints_xlu__1__files/plotlyjs-1.29.2/plotly-latest.min.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Consumer Complaints Working Progress Report</h1>
+<h4 class="author"><em>Xuan Lu</em></h4>
+<h4 class="date"><em>November 11, 2017</em></h4>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#introduction"><span class="toc-section-number">1</span> Introduction</a><ul>
+<li><a href="#format-column-names"><span class="toc-section-number">1.1</span> Format column names</a></li>
+</ul></li>
+<li><a href="#exploratory-data-analysis-and-feature-engineering"><span class="toc-section-number">2</span> Exploratory Data Analysis and Feature Engineering</a><ul>
+<li><a href="#process-time"><span class="toc-section-number">2.1</span> Process time</a><ul>
+<li><a href="#product-and-sub.product"><span class="toc-section-number">2.1.1</span> Product and sub.product</a></li>
+<li><a href="#issue-and-sub-issue"><span class="toc-section-number">2.1.2</span> Issue and Sub Issue</a></li>
+<li><a href="#state-and-zipcode"><span class="toc-section-number">2.1.3</span> State and Zipcode</a></li>
+<li><a href="#tags"><span class="toc-section-number">2.1.4</span> Tags</a></li>
+<li><a href="#submitted.via"><span class="toc-section-number">2.1.5</span> Submitted.via</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#prepare-final-data-for-building-model"><span class="toc-section-number">3</span> Prepare final data for building model</a><ul>
+<li><a href="#traget"><span class="toc-section-number">3.1</span> Traget</a></li>
+<li><a href="#date-time-variables"><span class="toc-section-number">3.2</span> date time variables</a></li>
+<li><a href="#feature-engineering-and-missing-value-imputation-for-nomial-variables"><span class="toc-section-number">3.3</span> Feature Engineering and Missing Value Imputation for Nomial Variables</a><ul>
+<li><a href="#mean-encoding-function"><span class="toc-section-number">3.3.1</span> <em>Mean Encoding</em> Function</a></li>
+<li><a href="#one-hot-encoding-for-rest-of-the-low-levels-nomial-variables."><span class="toc-section-number">3.3.2</span> <em>One hot encoding</em> for rest of the low levels nomial variables.</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#model-estimation"><span class="toc-section-number">4</span> Model Estimation</a><ul>
+<li><a href="#glm-l1"><span class="toc-section-number">4.1</span> Glm L1</a></li>
+<li><a href="#random-forest"><span class="toc-section-number">4.2</span> Random Forest</a></li>
+<li><a href="#gbm"><span class="toc-section-number">4.3</span> GBM</a></li>
+<li><a href="#neural-network-deep-learning"><span class="toc-section-number">4.4</span> Neural Network (Deep Learning)</a></li>
+<li><a href="#stack-ensemble-models"><span class="toc-section-number">4.5</span> Stack Ensemble models</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="introduction" class="section level1">
+<h1><span class="header-section-number">1</span> Introduction</h1>
+<p>This is a one-month project about the consumers’ complaints about financial products and services to companies. By adding their voice, consumers help improve the financial market place. It is important to response to their complaints in a timely manner. However, it is not always the case. In this project, I’m going to build a predictive model from the data on whether it will be responsed in time. ## Download and read data The data of consumer complaint can be downloaed from <a href="https://data.consumerfinance.gov/api/views/s6ew-h6mp/rows.csv?accessType=DOWNLOAD" class="uri">https://data.consumerfinance.gov/api/views/s6ew-h6mp/rows.csv?accessType=DOWNLOAD</a>. Descriptions for each column can be found in <a href="https://www.consumerfinance.gov/complaint/data-use/" class="uri">https://www.consumerfinance.gov/complaint/data-use/</a>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(data.table)
+<span class="kw">library</span>(dplyr)
+<span class="kw">library</span>(ggplot2)
+<span class="kw">library</span>(kableExtra)
+<span class="kw">library</span>(dygraphs)
+<span class="kw">library</span>(knitr)
+<span class="kw">library</span>(plotly)
+<span class="kw">library</span>(stringr)
+<span class="kw">library</span>(lubridate)
+<span class="kw">library</span>(Matrix)</code></pre></div>
+<p>First is to the data into data.frame and get a first look of it</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#setwd(&quot;C:\\Users\\xlu\\Downloads\\&quot;)</span>
+dat &lt;-<span class="st"> </span><span class="kw">fread</span>(<span class="st">&quot;Consumer_Complaints.csv&quot;</span>,<span class="dt">na.strings =</span> <span class="kw">c</span>(<span class="st">&quot;&quot;</span>,<span class="ot">NA</span>))</code></pre></div>
+<pre><code>## 
+Read 17.5% of 1029041 rows
+Read 42.8% of 1029041 rows
+Read 73.9% of 1029041 rows
+Read 901078 rows and 18 (of 18) columns from 0.384 GB file in 00:00:05</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(dat)</code></pre></div>
+<pre><code>##  [1] &quot;Date received&quot;                &quot;Product&quot;                     
+##  [3] &quot;Sub-product&quot;                  &quot;Issue&quot;                       
+##  [5] &quot;Sub-issue&quot;                    &quot;Consumer complaint narrative&quot;
+##  [7] &quot;Company public response&quot;      &quot;Company&quot;                     
+##  [9] &quot;State&quot;                        &quot;ZIP code&quot;                    
+## [11] &quot;Tags&quot;                         &quot;Consumer consent provided?&quot;  
+## [13] &quot;Submitted via&quot;                &quot;Date sent to company&quot;        
+## [15] &quot;Company response to consumer&quot; &quot;Timely response?&quot;            
+## [17] &quot;Consumer disputed?&quot;           &quot;Complaint ID&quot;</code></pre>
+<div id="format-column-names" class="section level2">
+<h2><span class="header-section-number">1.1</span> Format column names</h2>
+<p>In order to formatting the column names, I get ride of the “?” mark and subsitute spaces between words using “.”</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(dat) &lt;-<span class="st"> </span><span class="kw">gsub</span>(<span class="st">&quot;</span><span class="ch">\\</span><span class="st">?&quot;</span>,<span class="st">&quot;&quot;</span>,<span class="kw">names</span>(dat))
+<span class="kw">names</span>(dat) &lt;-<span class="st"> </span><span class="kw">gsub</span>(<span class="st">&quot;[ -]&quot;</span>,<span class="st">&quot;.&quot;</span>,<span class="kw">names</span>(dat))
+<span class="kw">head</span>(dat, <span class="dt">n =</span><span class="dv">3</span>)</code></pre></div>
+<pre><code>##    Date.received          Product    Sub.product
+## 1:    03/12/2014         Mortgage Other mortgage
+## 2:    10/01/2016 Credit reporting             NA
+## 3:    10/17/2016    Consumer Loan   Vehicle loan
+##                                       Issue      Sub.issue
+## 1: Loan modification,collection,foreclosure             NA
+## 2:   Incorrect information on credit report Account status
+## 3:               Managing the loan or lease             NA
+##                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  Consumer.complaint.narrative
+## 1:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         NA
+## 2:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   I have outdated information on my credit report that I have previously disputed that has yet to be removed this information is more then seven years old and does not meet credit reporting requirements
+## 3: I purchased a new car on XXXX XXXX. The car dealer called Citizens Bank to get a 10 day payoff on my loan, good till XXXX XXXX. The dealer sent the check the next day. When I balanced my checkbook on XXXX XXXX. I noticed that Citizens bank had taken the automatic payment out of my checking account at XXXX XXXX XXXX Bank. I called Citizens and they stated that they did not close the loan until XXXX XXXX. ( stating that they did not receive the check until XXXX. XXXX. ). I told them that I did not believe that the check took that long to arrive. XXXX told me a check was issued to me for the amount overpaid, they deducted additional interest. Today ( XXXX XXXX, ) I called Citizens Bank again and talked to a supervisor named XXXX, because on XXXX XXXX. I received a letter that the loan had been paid in full ( dated XXXX, XXXX ) but no refund check was included. XXXX stated that they hold any over payment for 10 business days after the loan was satisfied and that my check would be mailed out on Wed. the XX/XX/XXXX.. I questioned her about the delay in posting the dealer payment and she first stated that sometimes it takes 3 or 4 business days to post, then she said they did not receive the check till XXXX XXXX I again told her that I did not believe this and asked where is my money. She then stated that they hold the over payment for 10 business days. I asked her why, and she simply said that is their policy. I asked her if I would receive interest on my money and she stated no. I believe that Citizens bank is deliberately delaying the posting of payment and the return of consumer &#39;s money to make additional interest for the bank. If this is not illegal it should be, it does hurt the consumer and is not ethical. My amount of money lost is minimal but if they are doing this on thousands of car loans a month, then the additional interest earned for them could be staggering. I still have another car loan from Citizens Bank and I am afraid when I trade that car in another year I will run into the same problem again.
+##                                                                            Company.public.response
+## 1:                                                                                              NA
+## 2: Company has responded to the consumer and the CFPB and chooses not to provide a public response
+## 3:                                                                                              NA
+##                                   Company State ZIP.code           Tags
+## 1:                   M&amp;T BANK CORPORATION    MI    48382             NA
+## 2: TRANSUNION INTERMEDIATE HOLDINGS, INC.    AL    352XX             NA
+## 3:         CITIZENS FINANCIAL GROUP, INC.    PA    177XX Older American
+##    Consumer.consent.provided Submitted.via Date.sent.to.company
+## 1:                       N/A      Referral           03/17/2014
+## 2:          Consent provided           Web           10/05/2016
+## 3:          Consent provided           Web           10/20/2016
+##    Company.response.to.consumer Timely.response Consumer.disputed
+## 1:      Closed with explanation             Yes                No
+## 2:      Closed with explanation             Yes                No
+## 3:      Closed with explanation             Yes                No
+##    Complaint.ID
+## 1:       759217
+## 2:      2141773
+## 3:      2163100</code></pre>
+<p>There are three fields that indicate the a series responses/action of the company/clieants after the complaint is taken care of. Those post actions won’t be used in the model to predict whether the complaint can be responsed timely. So we dropped these fields directly.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat &lt;-<span class="st"> </span><span class="kw">data.table</span>(dat)[,<span class="kw">c</span>(<span class="st">&quot;Consumer.disputed&quot;</span>,<span class="st">&quot;Company.public.response&quot;</span>,<span class="st">&quot;Company.response.to.consumer&quot;</span>) <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="ot">NULL</span>]</code></pre></div>
+<p>I want to take a look at the missing value rates for each column.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> dat <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sapply</span>(., <span class="cf">function</span>(x)<span class="kw">sum</span>(<span class="kw">is.na</span>(x))<span class="op">/</span><span class="kw">length</span>(x)) <span class="op">%&gt;%</span>
+<span class="st">         </span><span class="kw">kable</span>(<span class="st">&quot;html&quot;</span>,<span class="dt">col.names =</span> <span class="st">&quot;Missing.Rate&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">         </span><span class="kw">kable_styling</span>(<span class="dt">bootstrap_options =</span> <span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>))</code></pre></div>
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+Missing.Rate
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Date.received
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Product
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sub.product
+</td>
+<td style="text-align:right;">
+0.2609763
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Issue
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sub.issue
+</td>
+<td style="text-align:right;">
+0.5295457
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Consumer.complaint.narrative
+</td>
+<td style="text-align:right;">
+0.7794542
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Company
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+State
+</td>
+<td style="text-align:right;">
+0.0103199
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ZIP.code
+</td>
+<td style="text-align:right;">
+0.0146014
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Tags
+</td>
+<td style="text-align:right;">
+0.8605670
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Consumer.consent.provided
+</td>
+<td style="text-align:right;">
+0.0394317
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Submitted.via
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Date.sent.to.company
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Timely.response
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Complaint.ID
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="exploratory-data-analysis-and-feature-engineering" class="section level1">
+<h1><span class="header-section-number">2</span> Exploratory Data Analysis and Feature Engineering</h1>
+<p>There are only 15 fields in the data. Let’s look at each column one by one. The first questions I’m interested in are, how the complaint changes in all these years, is there any pattern in the month of a year, day of a week, or week of a month. ##Complaints received dates</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(lubridate)
+dt &lt;-<span class="st"> </span><span class="kw">data.table</span>(dat)[,<span class="kw">c</span>(<span class="st">&quot;Date.received&quot;</span>,<span class="st">&quot;Timely.response&quot;</span>)][,temp1 <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="kw">mdy</span>(Date.received)][,<span class="st">`</span><span class="dt">:=</span><span class="st">`</span>(<span class="dt">Year =</span> <span class="kw">year</span>(temp1), <span class="dt">Mon =</span> <span class="kw">month</span>(temp1),<span class="dt">Day =</span> <span class="kw">wday</span>(temp1,<span class="dt">abbr =</span> <span class="ot">FALSE</span>),<span class="dt">Day_mon =</span> <span class="kw">day</span>(temp1))][,temp1<span class="op">:</span><span class="er">=</span><span class="ot">NULL</span>]
+
+dt[,ct <span class="op">:</span><span class="er">=</span><span class="st"> </span>.N,by =<span class="st"> </span>Year][,pct <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="kw">sum</span>(Timely.response <span class="op">==</span><span class="st"> &quot;No&quot;</span>)<span class="op">/</span>ct,by =<span class="st"> </span>Year]
+dt <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Year)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>(<span class="kw">aes</span>(<span class="dt">y =</span> ct, <span class="dt">colour =</span> <span class="st">&quot;No of Complaints&quot;</span>),<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>)<span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_bar</span>(<span class="kw">aes</span>(<span class="dt">y =</span> pct<span class="op">*</span><span class="dv">10</span><span class="op">^</span><span class="dv">6</span>, <span class="dt">colour =</span> <span class="st">&quot;Not Timely Response [%]&quot;</span>),<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">scale_y_continuous</span>(<span class="dt">sec.axis =</span> <span class="kw">sec_axis</span>(<span class="op">~</span>.<span class="op">*</span><span class="dv">10</span><span class="op">^</span>(<span class="op">-</span><span class="dv">6</span>), <span class="dt">name =</span> <span class="st">&quot;Not Timely Response [%]&quot;</span>))<span class="op">+</span>
+<span class="st">        </span><span class="kw">scale_colour_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>))<span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Num of Complaints&quot;</span>,
+                <span class="dt">x =</span> <span class="st">&quot;Year&quot;</span>,
+                <span class="dt">colour =</span> <span class="st">&quot;Parameter&quot;</span>)</code></pre></div>
+<p><img src="Consumer_Complaints_xlu__1__files/figure-html/unnamed-chunk-1-1.png" width="672" /> It shows that the complaints increase by year. However, generally the percentage of not response those complaints in time decrease. It has a dip at 2013, but with the rapid growth of the complaints from 2013 to 2014, the missing rate increased a little bit. Overally, the missing rate is below 0.04 after 2012.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dt[,ct <span class="op">:</span><span class="er">=</span><span class="st"> </span>.N,by =<span class="st"> </span>Mon][,pct <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="kw">sum</span>(Timely.response <span class="op">==</span><span class="st"> &quot;No&quot;</span>)<span class="op">/</span>ct,by =<span class="st"> </span>Mon]
+
+g &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dt,<span class="kw">aes</span>(<span class="dt">x =</span> Mon)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y =</span> ct, <span class="dt">colour =</span> <span class="st">&quot;No of Complaints&quot;</span>))
+g &lt;-<span class="st"> </span>g <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y =</span> pct<span class="op">*</span><span class="dv">10</span><span class="op">^</span><span class="dv">6</span>, <span class="dt">colour =</span> <span class="st">&quot;Not Timely Response [%]&quot;</span>)) 
+g &lt;-<span class="st"> </span>g <span class="op">+</span><span class="st"> </span><span class="kw">scale_y_continuous</span>(<span class="dt">sec.axis =</span> <span class="kw">sec_axis</span>(<span class="op">~</span>.<span class="op">*</span><span class="dv">10</span><span class="op">^</span>(<span class="op">-</span><span class="dv">6</span>), <span class="dt">name =</span> <span class="st">&quot;Not Timely Response [%]&quot;</span>))<span class="op">+</span><span class="kw">scale_x_continuous</span>(<span class="dt">labels =</span> month.abb,<span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">12</span>))
+ 
+  <span class="co"># modifying colours and theme options</span>
+  g &lt;-<span class="st"> </span>g <span class="op">+</span><span class="st"> </span><span class="kw">scale_colour_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>))
+  g &lt;-<span class="st"> </span>g <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Num of Complaints&quot;</span>,
+                <span class="dt">x =</span> <span class="st">&quot;Month&quot;</span>,
+                <span class="dt">colour =</span> <span class="st">&quot;Parameter&quot;</span>)
+ <span class="co">#g &lt;- g + theme(legend.position = c(0.5,0.5))</span>
+  g</code></pre></div>
+<p><img src="Consumer_Complaints_xlu__1__files/figure-html/month-1.png" width="672" /> there is a local high on May and holiday season from October to Dec.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dt[,ct <span class="op">:</span><span class="er">=</span><span class="st"> </span>.N,by =<span class="st"> </span>Day][,pct <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="kw">sum</span>(Timely.response <span class="op">==</span><span class="st"> &quot;No&quot;</span>)<span class="op">/</span>ct,by =<span class="st"> </span>Day]
+g &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dt,<span class="kw">aes</span>(<span class="dt">x =</span> Day)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y =</span> ct, <span class="dt">colour =</span> <span class="st">&quot;No of Complaints&quot;</span>))
+g &lt;-<span class="st"> </span>g <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y =</span> pct<span class="op">*</span><span class="dv">10</span><span class="op">^</span><span class="fl">6.5</span>, <span class="dt">colour =</span> <span class="st">&quot;Not Timely Response [%]&quot;</span>))
+g &lt;-<span class="st"> </span>g <span class="op">+</span><span class="st"> </span><span class="kw">scale_y_continuous</span>(<span class="dt">sec.axis =</span> <span class="kw">sec_axis</span>(<span class="op">~</span>.<span class="op">*</span><span class="dv">10</span><span class="op">^</span>(<span class="op">-</span><span class="fl">6.5</span>), <span class="dt">name =</span> <span class="st">&quot;Not Timely Response [%]&quot;</span>))<span class="op">+</span><span class="kw">scale_x_continuous</span>(<span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Mon&quot;</span>,<span class="st">&quot;Tue&quot;</span>,<span class="st">&quot;Wed&quot;</span>,<span class="st">&quot;Thu&quot;</span>,<span class="st">&quot;Fri&quot;</span>,<span class="st">&quot;Sat&quot;</span>,<span class="st">&quot;Sun&quot;</span>),<span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">7</span>))
+  <span class="co"># modifying colours and theme options</span>
+  g &lt;-<span class="st"> </span>g <span class="op">+</span><span class="st"> </span><span class="kw">scale_colour_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>))
+  g &lt;-<span class="st"> </span>g <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;No. of Complaints&quot;</span>,
+                <span class="dt">x =</span> <span class="st">&quot;Weekday&quot;</span>,
+                <span class="dt">colour =</span> <span class="st">&quot;Parameter&quot;</span>)
+  <span class="co">#g &lt;- g + theme(legend.position = c(0.8,0.5))</span>
+  g</code></pre></div>
+<p><img src="Consumer_Complaints_xlu__1__files/figure-html/weekday-1.png" width="672" /></p>
+<div id="process-time" class="section level2">
+<h2><span class="header-section-number">2.1</span> Process time</h2>
+<p>One important predictor is the duration between the complaints sent and the date received. We called it Process.time.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat &lt;-<span class="st"> </span><span class="kw">data.table</span>(dat)[,temp1 <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="kw">as.Date.character</span>(Date.sent.to.company,<span class="dt">format =</span> <span class="st">&quot;%m/%d/%Y&quot;</span>)][,temp2 <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="kw">as.Date.character</span>(Date.received,<span class="dt">format =</span> <span class="st">&quot;%m/%d/%Y&quot;</span>)][,Process.time <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="kw">as.numeric</span>(temp1 <span class="op">-</span><span class="st"> </span>temp2)][,<span class="st">`</span><span class="dt">:=</span><span class="st">`</span>(<span class="dt">temp1=</span><span class="ot">NULL</span>, <span class="dt">temp2 =</span> <span class="ot">NULL</span>)]
+
+<span class="kw">sum</span>(dat<span class="op">$</span>Process.time<span class="op">&lt;</span><span class="dv">0</span>)</code></pre></div>
+<pre><code>## [1] 7052</code></pre>
+<p>There are 7052 records with negative processing time, which may due to some typo in the complaints. So we simply drop those records.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat &lt;-<span class="st"> </span>dat[Process.time<span class="op">&gt;=</span><span class="dv">0</span>]</code></pre></div>
+<p>Let’s plot the distribution of the processing time and the not-timely-response rate by it.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">g &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dat, <span class="kw">aes</span>(<span class="kw">as.numeric</span>(Process.time)))<span class="op">+</span>
+<span class="st">        </span><span class="kw">geom_density</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">xlab</span>(<span class="st">&quot;Processing Time in day&quot;</span>)<span class="op">+</span>
+<span class="st">        </span><span class="kw">scale_x_continuous</span>(<span class="dt">limits=</span><span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">400</span>),<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">400</span>,<span class="dv">20</span>))
+g</code></pre></div>
+<p><img src="Consumer_Complaints_xlu__1__files/figure-html/proTime.plot-1.png" width="672" /> There are over 99% records that have process time less than 10 days, but there are some over 1000 days. Lets look at the not-timely response rate by process time.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dt &lt;-<span class="st"> </span><span class="kw">data.table</span>(dat)[,temp1 <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="kw">as.numeric</span>(Process.time)][, pct <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="kw">sum</span>(Timely.response <span class="op">==</span><span class="st"> &quot;No&quot;</span>)<span class="op">/</span>.N, by=temp1][,temp1 <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="ot">NULL</span>]
+dt&lt;-<span class="kw">unique</span>(dt[,.(Process.time,pct)])
+
+g &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dt, <span class="kw">aes</span>(<span class="dt">x=</span><span class="kw">as.numeric</span>(Process.time),<span class="dt">y=</span>pct))<span class="op">+</span><span class="kw">geom_point</span>(<span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)<span class="op">+</span>
+<span class="st">        </span><span class="kw">scale_x_continuous</span>(<span class="dt">limits=</span><span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">400</span>),<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">400</span>,<span class="dv">20</span>))
+<span class="kw">ggplotly</span>(g)</code></pre></div>
+<p><div id="35e428612d5d" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="35e428612d5d">{"x":{"data":[{"x":[5,4,3,2,0,7,27,104,16,1,6,15,26,30,36,10,9,21,190,8,17,13,64,11,12,28,43,19,37,280,32,22,14,52,29,23,175,139,39,51,48,38,91,44,47,20,35,31,94,18,342,24,46,56,62,59,60,78,84,49,33,54,121,200,34,167,41,73,61,99,45,42,153,40,25,150,57,50,77,289,198,330,72,225,113,143,364,250,86,196,208,69,65,205,311,199,114,135,76,82,158,58,108,66,83,89,55,197,85,79,146,269,67,70,117,203,74,173,75,231,239,53,313,206,168,81,182,243,238,177,101,null,110,100,154,221,174,178,180,202,71,292,210,148,93,257,176,119,216,189,106,63,194,240,95,68,87,254,170,124,169,96,359,141,80,109,98,185,187,97,326,237,193,224,191,212,126,229,241,220,125,null,122,226,115,181,363,131,222,127,209,230,186,107,183,111,233,258,null,160,152,142,217,159,218,234,219,162,134,267,null,299,391,204,161,90,133,223,251,245,195,192,376,171,129,213,118,null,156,232,116,92,null,179,88,null,null,281,null,207,157,123,null,201,149,399,184,155,188,211,253,166,137,172,282,163,136,130,285,112,102,283,306,382,256,null,315,105,228,null,null,302,268,244,287,252,null,265,null,null,null,null,132,103,242,147,227,215,null,164,null,323,151,128,null,214,165,329,null,null,138,275,235,374,261,335,247,264,314,236,null,271,null,308,null,145,null,266,null,312,272,301,263,null,null,262,null,350,398,144,298,270,null,255,null,140,null,120,381,400,286,343,318,327,null,null,null,356,360,259,393,null,321,null,null,392,null,null,249,305,246,null,336,274,297,null,296,324,288,347,null,310,null,345,325,null,373,341,273,null,null,388,null,null,null,307,357,null,null,null,null,null,null,null,null,null,null,291,352,351,380,null,null,395,293,365,null,null,260,null,248,397,322,378,null,null,334,290,340,null,null,null,null,null,320,358,null,null,null,276,328,null,null,366,346,null,null,279,379,null,377,null,null,null,null,390,null,null,348,null,null,null,null,null,null,null,null,null,null,303,null,null,null,null],"y":[0.0268047895861281,0.025583294704545,0.0268312757201646,0.0266787983167336,0.0240530640946254,0.0384801418820874,0.0554089709762533,0.108108108108108,0.0456041372825576,0.0212634597072089,0.0304570259208731,0.0320468642315644,0.0486685032139578,0.0696517412935323,0.0905391658189217,0.0401496259351621,0.0406417112299465,0.0384087791495199,0,0.0462939855253307,0.0419447092469018,0.0340136054421769,0.0967741935483871,0.0466126230457441,0.0417036379769299,0.0544388609715243,0.106918238993711,0.0323963792282039,0.0760401721664275,0,0.067741935483871,0.0430686406460296,0.0457177689728741,0.0829015544041451,0.0578093306288032,0.0501504513540622,0,0,0.0730253353204173,0.0614754098360656,0.0976744186046512,0.0858895705521472,0.0793650793650794,0.104308390022676,0.0998003992015968,0.0365699873896595,0.0661881977671451,0.0764563106796116,0.117647058823529,0.0358460727464417,0,0.0424374319912949,0.0849256900212314,0.0822510822510823,0.0654761904761905,0.0728476821192053,0.0629370629370629,0.0526315789473684,0.0694444444444444,0.109839816933638,0.0725047080979284,0.0473684210526316,0.136363636363636,0,0.0758180367118915,0.0952380952380952,0.0856313497822932,0.0759493670886076,0.0763888888888889,0.114754098360656,0.0935550935550936,0.0909090909090909,0,0.0734870317002882,0.0437743190661479,0.08,0.053475935828877,0.135048231511254,0.114583333333333,0,0,0,0.0882352941176471,0.04,0.137931034482759,0,0,0.142857142857143,0.0408163265306122,0,0,0.047244094488189,0.0810810810810811,0,0,0,0.05,0.0833333333333333,0.103896103896104,0.0784313725490196,0.0909090909090909,0.0606060606060606,0.148148148148148,0.0576923076923077,0.0483870967741935,0.142857142857143,0.0606060606060606,0.0444444444444444,0.12,0.0847457627118644,0.105263157894737,0.25,0.0625,0.0909090909090909,0.0588235294117647,0,0.0659340659340659,0.142857142857143,0.132530120481928,0,0,0.0680628272251309,0,0.0967741935483871,0.0666666666666667,0.0833333333333333,0.025,0,0.1,0.0303030303030303,0.0645161290322581,0,0.0769230769230769,0.0588235294117647,0.0285714285714286,0.1,0.0476190476190476,0.0384615384615385,0,0.0294117647058824,0.0792079207920792,0,0,0.0526315789473684,0.0263157894736842,0.1,0.0285714285714286,0.0975609756097561,0.0384615384615385,0.0697674418604651,0.121212121212121,0.0784313725490196,0,0,0.102040816326531,0.152173913043478,0.117647058823529,0,0.0625,0.0769230769230769,0,0.206896551724138,0,0.0454545454545455,0.0196078431372549,0,0.0892857142857143,0.107142857142857,0,0.0851063829787234,0,0.133333333333333,0,0.0714285714285714,0,0,0.2,0,0,0,0,0,0.0476190476190476,0,0.105263157894737,0,0,0,0,0.08,0,0,0,0.153846153846154,0.0357142857142857,0.192307692307692,0,0.0526315789473684,0,0,0,0.0666666666666667,0,0.0645161290322581,0,0,0,0,0,0,0,0,0,0,0.0454545454545455,0.1,0.125,0.153846153846154,0,0.111111111111111,0.1,0,0,0,0.0434782608695652,0.133333333333333,0,0,0,0.0526315789473684,0.0344827586206897,0.0952380952380952,0,0.222222222222222,0.0566037735849057,0.5,0,0.333333333333333,0,0,0.157894736842105,0.307692307692308,0,0.04,0.0833333333333333,1,0,0.0882352941176471,0.0476190476190476,0,0.0555555555555556,0.125,0.333333333333333,0.0588235294117647,0,0.2,0.0454545454545455,0.0714285714285714,0,0.176470588235294,0.0833333333333333,0.5,0,0,0,0,0,0.162790697674419,0,1,0,0.333333333333333,0,0,0.25,0,1,0,0,1,0,0,0,0.0909090909090909,0,0.117647058823529,0,0.0588235294117647,0,0,0,0,0.0952380952380952,0.133333333333333,0,0.0833333333333333,0.153846153846154,0,0,0,0.222222222222222,0,0,0,0,0,0,0,0.25,0,0,0,0.5,0.25,0,0.222222222222222,0,0.111111111111111,0,0,0,0,0,0,0,0,1,0,0,0.1,0,0,0,0,1,0.153846153846154,0,0.0714285714285714,1,0,0,0,0,0,1,0,0.5,0,0,0,0,0,0,0,0,0,0,0.5,0,0,0.4,0,0,0,0,0,0,0.25,0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0],"text":["as.numeric(Process.time):   5<br />pct: 0.02680479","as.numeric(Process.time):   4<br />pct: 0.02558329","as.numeric(Process.time):   3<br />pct: 0.02683128","as.numeric(Process.time):   2<br />pct: 0.02667880","as.numeric(Process.time):   0<br />pct: 0.02405306","as.numeric(Process.time):   7<br />pct: 0.03848014","as.numeric(Process.time):  27<br />pct: 0.05540897","as.numeric(Process.time): 104<br />pct: 0.10810811","as.numeric(Process.time):  16<br />pct: 0.04560414","as.numeric(Process.time):   1<br />pct: 0.02126346","as.numeric(Process.time):   6<br />pct: 0.03045703","as.numeric(Process.time):  15<br />pct: 0.03204686","as.numeric(Process.time):  26<br />pct: 0.04866850","as.numeric(Process.time):  30<br />pct: 0.06965174","as.numeric(Process.time):  36<br />pct: 0.09053917","as.numeric(Process.time):  10<br />pct: 0.04014963","as.numeric(Process.time):   9<br />pct: 0.04064171","as.numeric(Process.time):  21<br />pct: 0.03840878","as.numeric(Process.time): 190<br />pct: 0.00000000","as.numeric(Process.time):   8<br />pct: 0.04629399","as.numeric(Process.time):  17<br />pct: 0.04194471","as.numeric(Process.time):  13<br />pct: 0.03401361","as.numeric(Process.time):  64<br />pct: 0.09677419","as.numeric(Process.time):  11<br />pct: 0.04661262","as.numeric(Process.time):  12<br />pct: 0.04170364","as.numeric(Process.time):  28<br />pct: 0.05443886","as.numeric(Process.time):  43<br />pct: 0.10691824","as.numeric(Process.time):  19<br />pct: 0.03239638","as.numeric(Process.time):  37<br />pct: 0.07604017","as.numeric(Process.time): 280<br />pct: 0.00000000","as.numeric(Process.time):  32<br />pct: 0.06774194","as.numeric(Process.time):  22<br />pct: 0.04306864","as.numeric(Process.time):  14<br />pct: 0.04571777","as.numeric(Process.time):  52<br />pct: 0.08290155","as.numeric(Process.time):  29<br />pct: 0.05780933","as.numeric(Process.time):  23<br />pct: 0.05015045","as.numeric(Process.time): 175<br />pct: 0.00000000","as.numeric(Process.time): 139<br />pct: 0.00000000","as.numeric(Process.time):  39<br />pct: 0.07302534","as.numeric(Process.time):  51<br />pct: 0.06147541","as.numeric(Process.time):  48<br />pct: 0.09767442","as.numeric(Process.time):  38<br />pct: 0.08588957","as.numeric(Process.time):  91<br />pct: 0.07936508","as.numeric(Process.time):  44<br />pct: 0.10430839","as.numeric(Process.time):  47<br />pct: 0.09980040","as.numeric(Process.time):  20<br />pct: 0.03656999","as.numeric(Process.time):  35<br />pct: 0.06618820","as.numeric(Process.time):  31<br />pct: 0.07645631","as.numeric(Process.time):  94<br />pct: 0.11764706","as.numeric(Process.time):  18<br />pct: 0.03584607","as.numeric(Process.time): 342<br />pct: 0.00000000","as.numeric(Process.time):  24<br />pct: 0.04243743","as.numeric(Process.time):  46<br />pct: 0.08492569","as.numeric(Process.time):  56<br />pct: 0.08225108","as.numeric(Process.time):  62<br />pct: 0.06547619","as.numeric(Process.time):  59<br />pct: 0.07284768","as.numeric(Process.time):  60<br />pct: 0.06293706","as.numeric(Process.time):  78<br />pct: 0.05263158","as.numeric(Process.time):  84<br />pct: 0.06944444","as.numeric(Process.time):  49<br />pct: 0.10983982","as.numeric(Process.time):  33<br />pct: 0.07250471","as.numeric(Process.time):  54<br />pct: 0.04736842","as.numeric(Process.time): 121<br />pct: 0.13636364","as.numeric(Process.time): 200<br />pct: 0.00000000","as.numeric(Process.time):  34<br />pct: 0.07581804","as.numeric(Process.time): 167<br />pct: 0.09523810","as.numeric(Process.time):  41<br />pct: 0.08563135","as.numeric(Process.time):  73<br />pct: 0.07594937","as.numeric(Process.time):  61<br />pct: 0.07638889","as.numeric(Process.time):  99<br />pct: 0.11475410","as.numeric(Process.time):  45<br />pct: 0.09355509","as.numeric(Process.time):  42<br />pct: 0.09090909","as.numeric(Process.time): 153<br />pct: 0.00000000","as.numeric(Process.time):  40<br />pct: 0.07348703","as.numeric(Process.time):  25<br />pct: 0.04377432","as.numeric(Process.time): 150<br />pct: 0.08000000","as.numeric(Process.time):  57<br />pct: 0.05347594","as.numeric(Process.time):  50<br />pct: 0.13504823","as.numeric(Process.time):  77<br />pct: 0.11458333","as.numeric(Process.time): 289<br />pct: 0.00000000","as.numeric(Process.time): 198<br />pct: 0.00000000","as.numeric(Process.time): 330<br />pct: 0.00000000","as.numeric(Process.time):  72<br />pct: 0.08823529","as.numeric(Process.time): 225<br />pct: 0.04000000","as.numeric(Process.time): 113<br />pct: 0.13793103","as.numeric(Process.time): 143<br />pct: 0.00000000","as.numeric(Process.time): 364<br />pct: 0.00000000","as.numeric(Process.time): 250<br />pct: 0.14285714","as.numeric(Process.time):  86<br />pct: 0.04081633","as.numeric(Process.time): 196<br />pct: 0.00000000","as.numeric(Process.time): 208<br />pct: 0.00000000","as.numeric(Process.time):  69<br />pct: 0.04724409","as.numeric(Process.time):  65<br />pct: 0.08108108","as.numeric(Process.time): 205<br />pct: 0.00000000","as.numeric(Process.time): 311<br />pct: 0.00000000","as.numeric(Process.time): 199<br />pct: 0.00000000","as.numeric(Process.time): 114<br />pct: 0.05000000","as.numeric(Process.time): 135<br />pct: 0.08333333","as.numeric(Process.time):  76<br />pct: 0.10389610","as.numeric(Process.time):  82<br />pct: 0.07843137","as.numeric(Process.time): 158<br />pct: 0.09090909","as.numeric(Process.time):  58<br />pct: 0.06060606","as.numeric(Process.time): 108<br />pct: 0.14814815","as.numeric(Process.time):  66<br />pct: 0.05769231","as.numeric(Process.time):  83<br />pct: 0.04838710","as.numeric(Process.time):  89<br />pct: 0.14285714","as.numeric(Process.time):  55<br />pct: 0.06060606","as.numeric(Process.time): 197<br />pct: 0.04444444","as.numeric(Process.time):  85<br />pct: 0.12000000","as.numeric(Process.time):  79<br />pct: 0.08474576","as.numeric(Process.time): 146<br />pct: 0.10526316","as.numeric(Process.time): 269<br />pct: 0.25000000","as.numeric(Process.time):  67<br />pct: 0.06250000","as.numeric(Process.time):  70<br />pct: 0.09090909","as.numeric(Process.time): 117<br />pct: 0.05882353","as.numeric(Process.time): 203<br />pct: 0.00000000","as.numeric(Process.time):  74<br />pct: 0.06593407","as.numeric(Process.time): 173<br />pct: 0.14285714","as.numeric(Process.time):  75<br />pct: 0.13253012","as.numeric(Process.time): 231<br />pct: 0.00000000","as.numeric(Process.time): 239<br />pct: 0.00000000","as.numeric(Process.time):  53<br />pct: 0.06806283","as.numeric(Process.time): 313<br />pct: 0.00000000","as.numeric(Process.time): 206<br />pct: 0.09677419","as.numeric(Process.time): 168<br />pct: 0.06666667","as.numeric(Process.time):  81<br />pct: 0.08333333","as.numeric(Process.time): 182<br />pct: 0.02500000","as.numeric(Process.time): 243<br />pct: 0.00000000","as.numeric(Process.time): 238<br />pct: 0.10000000","as.numeric(Process.time): 177<br />pct: 0.03030303","as.numeric(Process.time): 101<br />pct: 0.06451613","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 110<br />pct: 0.07692308","as.numeric(Process.time): 100<br />pct: 0.05882353","as.numeric(Process.time): 154<br />pct: 0.02857143","as.numeric(Process.time): 221<br />pct: 0.10000000","as.numeric(Process.time): 174<br />pct: 0.04761905","as.numeric(Process.time): 178<br />pct: 0.03846154","as.numeric(Process.time): 180<br />pct: 0.00000000","as.numeric(Process.time): 202<br />pct: 0.02941176","as.numeric(Process.time):  71<br />pct: 0.07920792","as.numeric(Process.time): 292<br />pct: 0.00000000","as.numeric(Process.time): 210<br />pct: 0.00000000","as.numeric(Process.time): 148<br />pct: 0.05263158","as.numeric(Process.time):  93<br />pct: 0.02631579","as.numeric(Process.time): 257<br />pct: 0.10000000","as.numeric(Process.time): 176<br />pct: 0.02857143","as.numeric(Process.time): 119<br />pct: 0.09756098","as.numeric(Process.time): 216<br />pct: 0.03846154","as.numeric(Process.time): 189<br />pct: 0.06976744","as.numeric(Process.time): 106<br />pct: 0.12121212","as.numeric(Process.time):  63<br />pct: 0.07843137","as.numeric(Process.time): 194<br />pct: 0.00000000","as.numeric(Process.time): 240<br />pct: 0.00000000","as.numeric(Process.time):  95<br />pct: 0.10204082","as.numeric(Process.time):  68<br />pct: 0.15217391","as.numeric(Process.time):  87<br />pct: 0.11764706","as.numeric(Process.time): 254<br />pct: 0.00000000","as.numeric(Process.time): 170<br />pct: 0.06250000","as.numeric(Process.time): 124<br />pct: 0.07692308","as.numeric(Process.time): 169<br />pct: 0.00000000","as.numeric(Process.time):  96<br />pct: 0.20689655","as.numeric(Process.time): 359<br />pct: 0.00000000","as.numeric(Process.time): 141<br />pct: 0.04545455","as.numeric(Process.time):  80<br />pct: 0.01960784","as.numeric(Process.time): 109<br />pct: 0.00000000","as.numeric(Process.time):  98<br />pct: 0.08928571","as.numeric(Process.time): 185<br />pct: 0.10714286","as.numeric(Process.time): 187<br />pct: 0.00000000","as.numeric(Process.time):  97<br />pct: 0.08510638","as.numeric(Process.time): 326<br />pct: 0.00000000","as.numeric(Process.time): 237<br />pct: 0.13333333","as.numeric(Process.time): 193<br />pct: 0.00000000","as.numeric(Process.time): 224<br />pct: 0.07142857","as.numeric(Process.time): 191<br />pct: 0.00000000","as.numeric(Process.time): 212<br />pct: 0.00000000","as.numeric(Process.time): 126<br />pct: 0.20000000","as.numeric(Process.time): 229<br />pct: 0.00000000","as.numeric(Process.time): 241<br />pct: 0.00000000","as.numeric(Process.time): 220<br />pct: 0.00000000","as.numeric(Process.time): 125<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 122<br />pct: 0.04761905","as.numeric(Process.time): 226<br />pct: 0.00000000","as.numeric(Process.time): 115<br />pct: 0.10526316","as.numeric(Process.time): 181<br />pct: 0.00000000","as.numeric(Process.time): 363<br />pct: 0.00000000","as.numeric(Process.time): 131<br />pct: 0.00000000","as.numeric(Process.time): 222<br />pct: 0.00000000","as.numeric(Process.time): 127<br />pct: 0.08000000","as.numeric(Process.time): 209<br />pct: 0.00000000","as.numeric(Process.time): 230<br />pct: 0.00000000","as.numeric(Process.time): 186<br />pct: 0.00000000","as.numeric(Process.time): 107<br />pct: 0.15384615","as.numeric(Process.time): 183<br />pct: 0.03571429","as.numeric(Process.time): 111<br />pct: 0.19230769","as.numeric(Process.time): 233<br />pct: 0.00000000","as.numeric(Process.time): 258<br />pct: 0.05263158","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 160<br />pct: 0.00000000","as.numeric(Process.time): 152<br />pct: 0.00000000","as.numeric(Process.time): 142<br />pct: 0.06666667","as.numeric(Process.time): 217<br />pct: 0.00000000","as.numeric(Process.time): 159<br />pct: 0.06451613","as.numeric(Process.time): 218<br />pct: 0.00000000","as.numeric(Process.time): 234<br />pct: 0.00000000","as.numeric(Process.time): 219<br />pct: 0.00000000","as.numeric(Process.time): 162<br />pct: 0.00000000","as.numeric(Process.time): 134<br />pct: 0.00000000","as.numeric(Process.time): 267<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 299<br />pct: 0.00000000","as.numeric(Process.time): 391<br />pct: 0.00000000","as.numeric(Process.time): 204<br />pct: 0.00000000","as.numeric(Process.time): 161<br />pct: 0.04545455","as.numeric(Process.time):  90<br />pct: 0.10000000","as.numeric(Process.time): 133<br />pct: 0.12500000","as.numeric(Process.time): 223<br />pct: 0.15384615","as.numeric(Process.time): 251<br />pct: 0.00000000","as.numeric(Process.time): 245<br />pct: 0.11111111","as.numeric(Process.time): 195<br />pct: 0.10000000","as.numeric(Process.time): 192<br />pct: 0.00000000","as.numeric(Process.time): 376<br />pct: 0.00000000","as.numeric(Process.time): 171<br />pct: 0.00000000","as.numeric(Process.time): 129<br />pct: 0.04347826","as.numeric(Process.time): 213<br />pct: 0.13333333","as.numeric(Process.time): 118<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 156<br />pct: 0.00000000","as.numeric(Process.time): 232<br />pct: 0.05263158","as.numeric(Process.time): 116<br />pct: 0.03448276","as.numeric(Process.time):  92<br />pct: 0.09523810","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 179<br />pct: 0.22222222","as.numeric(Process.time):  88<br />pct: 0.05660377","as.numeric(Process.time):  NA<br />pct: 0.50000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 281<br />pct: 0.33333333","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 207<br />pct: 0.00000000","as.numeric(Process.time): 157<br />pct: 0.15789474","as.numeric(Process.time): 123<br />pct: 0.30769231","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 201<br />pct: 0.04000000","as.numeric(Process.time): 149<br />pct: 0.08333333","as.numeric(Process.time): 399<br />pct: 1.00000000","as.numeric(Process.time): 184<br />pct: 0.00000000","as.numeric(Process.time): 155<br />pct: 0.08823529","as.numeric(Process.time): 188<br />pct: 0.04761905","as.numeric(Process.time): 211<br />pct: 0.00000000","as.numeric(Process.time): 253<br />pct: 0.05555556","as.numeric(Process.time): 166<br />pct: 0.12500000","as.numeric(Process.time): 137<br />pct: 0.33333333","as.numeric(Process.time): 172<br />pct: 0.05882353","as.numeric(Process.time): 282<br />pct: 0.00000000","as.numeric(Process.time): 163<br />pct: 0.20000000","as.numeric(Process.time): 136<br />pct: 0.04545455","as.numeric(Process.time): 130<br />pct: 0.07142857","as.numeric(Process.time): 285<br />pct: 0.00000000","as.numeric(Process.time): 112<br />pct: 0.17647059","as.numeric(Process.time): 102<br />pct: 0.08333333","as.numeric(Process.time): 283<br />pct: 0.50000000","as.numeric(Process.time): 306<br />pct: 0.00000000","as.numeric(Process.time): 382<br />pct: 0.00000000","as.numeric(Process.time): 256<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 315<br />pct: 0.00000000","as.numeric(Process.time): 105<br />pct: 0.16279070","as.numeric(Process.time): 228<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 1.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 302<br />pct: 0.33333333","as.numeric(Process.time): 268<br />pct: 0.00000000","as.numeric(Process.time): 244<br />pct: 0.00000000","as.numeric(Process.time): 287<br />pct: 0.25000000","as.numeric(Process.time): 252<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 1.00000000","as.numeric(Process.time): 265<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 1.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 132<br />pct: 0.00000000","as.numeric(Process.time): 103<br />pct: 0.09090909","as.numeric(Process.time): 242<br />pct: 0.00000000","as.numeric(Process.time): 147<br />pct: 0.11764706","as.numeric(Process.time): 227<br />pct: 0.00000000","as.numeric(Process.time): 215<br />pct: 0.05882353","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 164<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 323<br />pct: 0.00000000","as.numeric(Process.time): 151<br />pct: 0.09523810","as.numeric(Process.time): 128<br />pct: 0.13333333","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 214<br />pct: 0.08333333","as.numeric(Process.time): 165<br />pct: 0.15384615","as.numeric(Process.time): 329<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 138<br />pct: 0.22222222","as.numeric(Process.time): 275<br />pct: 0.00000000","as.numeric(Process.time): 235<br />pct: 0.00000000","as.numeric(Process.time): 374<br />pct: 0.00000000","as.numeric(Process.time): 261<br />pct: 0.00000000","as.numeric(Process.time): 335<br />pct: 0.00000000","as.numeric(Process.time): 247<br />pct: 0.00000000","as.numeric(Process.time): 264<br />pct: 0.00000000","as.numeric(Process.time): 314<br />pct: 0.25000000","as.numeric(Process.time): 236<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 271<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.50000000","as.numeric(Process.time): 308<br />pct: 0.25000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 145<br />pct: 0.22222222","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 266<br />pct: 0.11111111","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 312<br />pct: 0.00000000","as.numeric(Process.time): 272<br />pct: 0.00000000","as.numeric(Process.time): 301<br />pct: 0.00000000","as.numeric(Process.time): 263<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 262<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 1.00000000","as.numeric(Process.time): 350<br />pct: 0.00000000","as.numeric(Process.time): 398<br />pct: 0.00000000","as.numeric(Process.time): 144<br />pct: 0.10000000","as.numeric(Process.time): 298<br />pct: 0.00000000","as.numeric(Process.time): 270<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 255<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 1.00000000","as.numeric(Process.time): 140<br />pct: 0.15384615","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 120<br />pct: 0.07142857","as.numeric(Process.time): 381<br />pct: 1.00000000","as.numeric(Process.time): 400<br />pct: 0.00000000","as.numeric(Process.time): 286<br />pct: 0.00000000","as.numeric(Process.time): 343<br />pct: 0.00000000","as.numeric(Process.time): 318<br />pct: 0.00000000","as.numeric(Process.time): 327<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 1.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.50000000","as.numeric(Process.time): 356<br />pct: 0.00000000","as.numeric(Process.time): 360<br />pct: 0.00000000","as.numeric(Process.time): 259<br />pct: 0.00000000","as.numeric(Process.time): 393<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 321<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 392<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.50000000","as.numeric(Process.time): 249<br />pct: 0.00000000","as.numeric(Process.time): 305<br />pct: 0.00000000","as.numeric(Process.time): 246<br />pct: 0.40000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 336<br />pct: 0.00000000","as.numeric(Process.time): 274<br />pct: 0.00000000","as.numeric(Process.time): 297<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 296<br />pct: 0.00000000","as.numeric(Process.time): 324<br />pct: 0.25000000","as.numeric(Process.time): 288<br />pct: 0.50000000","as.numeric(Process.time): 347<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 310<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 345<br />pct: 0.00000000","as.numeric(Process.time): 325<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 373<br />pct: 0.00000000","as.numeric(Process.time): 341<br />pct: 0.00000000","as.numeric(Process.time): 273<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 388<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 307<br />pct: 0.00000000","as.numeric(Process.time): 357<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 1.00000000","as.numeric(Process.time):  NA<br />pct: 1.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 1.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 291<br />pct: 0.00000000","as.numeric(Process.time): 352<br />pct: 0.00000000","as.numeric(Process.time): 351<br />pct: 0.00000000","as.numeric(Process.time): 380<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 395<br />pct: 0.00000000","as.numeric(Process.time): 293<br />pct: 0.00000000","as.numeric(Process.time): 365<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 260<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 248<br />pct: 0.00000000","as.numeric(Process.time): 397<br />pct: 0.00000000","as.numeric(Process.time): 322<br />pct: 0.00000000","as.numeric(Process.time): 378<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 334<br />pct: 0.00000000","as.numeric(Process.time): 290<br />pct: 0.00000000","as.numeric(Process.time): 340<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 320<br />pct: 0.00000000","as.numeric(Process.time): 358<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 276<br />pct: 0.00000000","as.numeric(Process.time): 328<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 1.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 366<br />pct: 0.00000000","as.numeric(Process.time): 346<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 279<br />pct: 0.00000000","as.numeric(Process.time): 379<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 377<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 1.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 390<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 1.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 348<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 1.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time): 303<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000","as.numeric(Process.time):  NA<br />pct: 1.00000000","as.numeric(Process.time):  NA<br />pct: 0.00000000"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,0,255,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,0,255,1)"}},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":26.2283105022831,"r":7.30593607305936,"b":40.1826484018265,"l":48.9497716894977},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"type":"linear","autorange":false,"tickmode":"array","range":[-20,420],"ticktext":["0","20","40","60","80","100","120","140","160","180","200","220","240","260","280","300","320","340","360","380","400"],"tickvals":[0,20,40,60,80,100,120,140,160,180,200,220,240,260,280,300,320,340,360,380,400],"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":"as.numeric(Process.time)","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"type":"linear","autorange":false,"tickmode":"array","range":[-0.05,1.05],"ticktext":["0.00","0.25","0.50","0.75","1.00"],"tickvals":[0,0.25,0.5,0.75,1],"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":"pct","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest"},"source":"A","attrs":{"35e4263e64a3":{"x":{},"y":{},"type":"ggplotly"}},"cur_data":"35e4263e64a3","visdat":{"35e4263e64a3":["function (y) ","x"]},"config":{"modeBarButtonsToAdd":[{"name":"Collaborate","icon":{"width":1000,"ascent":500,"descent":-50,"path":"M487 375c7-10 9-23 5-36l-79-259c-3-12-11-23-22-31-11-8-22-12-35-12l-263 0c-15 0-29 5-43 15-13 10-23 23-28 37-5 13-5 25-1 37 0 0 0 3 1 7 1 5 1 8 1 11 0 2 0 4-1 6 0 3-1 5-1 6 1 2 2 4 3 6 1 2 2 4 4 6 2 3 4 5 5 7 5 7 9 16 13 26 4 10 7 19 9 26 0 2 0 5 0 9-1 4-1 6 0 8 0 2 2 5 4 8 3 3 5 5 5 7 4 6 8 15 12 26 4 11 7 19 7 26 1 1 0 4 0 9-1 4-1 7 0 8 1 2 3 5 6 8 4 4 6 6 6 7 4 5 8 13 13 24 4 11 7 20 7 28 1 1 0 4 0 7-1 3-1 6-1 7 0 2 1 4 3 6 1 1 3 4 5 6 2 3 3 5 5 6 1 2 3 5 4 9 2 3 3 7 5 10 1 3 2 6 4 10 2 4 4 7 6 9 2 3 4 5 7 7 3 2 7 3 11 3 3 0 8 0 13-1l0-1c7 2 12 2 14 2l218 0c14 0 25-5 32-16 8-10 10-23 6-37l-79-259c-7-22-13-37-20-43-7-7-19-10-37-10l-248 0c-5 0-9-2-11-5-2-3-2-7 0-12 4-13 18-20 41-20l264 0c5 0 10 2 16 5 5 3 8 6 10 11l85 282c2 5 2 10 2 17 7-3 13-7 17-13z m-304 0c-1-3-1-5 0-7 1-1 3-2 6-2l174 0c2 0 4 1 7 2 2 2 4 4 5 7l6 18c0 3 0 5-1 7-1 1-3 2-6 2l-173 0c-3 0-5-1-8-2-2-2-4-4-4-7z m-24-73c-1-3-1-5 0-7 2-2 3-2 6-2l174 0c2 0 5 0 7 2 3 2 4 4 5 7l6 18c1 2 0 5-1 6-1 2-3 3-5 3l-174 0c-3 0-5-1-7-3-3-1-4-4-5-6z"},"click":"function(gd) { \n        // is this being viewed in RStudio?\n        if (location.search == '?viewer_pane=1') {\n          alert('To learn about plotly for collaboration, visit:\\n https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html');\n        } else {\n          window.open('https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html', '_blank');\n        }\n      }"}],"cloud":false},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1}},"base_url":"https://plot.ly"},"evals":["config.modeBarButtonsToAdd.0.click"],"jsHooks":{"render":[{"code":"function(el, x) { var ctConfig = crosstalk.var('plotlyCrosstalkOpts').set({\"on\":\"plotly_click\",\"persistent\":false,\"dynamic\":false,\"selectize\":false,\"opacityDim\":0.2,\"selected\":{\"opacity\":1}}); }","data":null}]}}</script> It seems that when processing time increases from 0 to 50 days, the percentage of not-timely-response rate also climb up. After that, the scatter plot become very sparse. It is due to very small sample sizes, as we see from the previous plot, over 99.9 percent of days are within 20.</p>
+<p>Therefore, we delete processing time over 1 year as well as negative numbers from the dataset.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat &lt;-<span class="st"> </span>dat[Process.time <span class="op">&lt;</span><span class="st"> </span><span class="dv">366</span>]</code></pre></div>
+<div id="product-and-sub.product" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Product and sub.product</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unique</span>(dat<span class="op">$</span>Product)
+<span class="kw">length</span>(<span class="kw">unique</span>(dat<span class="op">$</span>Sub.product))</code></pre></div>
+<p>There are 18 products and 76 sub product. I want to see how the not timely response rate distributed in the first 10 most frequent reported products and sub product.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(stringr)
+dt &lt;-<span class="st"> </span><span class="kw">data.table</span>(dat)[,ct<span class="op">:</span><span class="er">=</span><span class="st"> </span>.N, by =<span class="st"> </span>Product][,pct <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="kw">sum</span>(Timely.response <span class="op">==</span><span class="st"> &quot;No&quot;</span>)<span class="op">/</span>ct, by =<span class="st"> </span>Product][,.(ct,pct,Product)]
+a &lt;-<span class="st"> </span><span class="kw">unique</span>(dt)
+a &lt;-<span class="st"> </span>a[<span class="kw">order</span>(<span class="op">-</span>ct)]
+<span class="co">#a$Product &lt;- trimws(a$Product)</span>
+a<span class="op">$</span>Product&lt;-<span class="kw">reorder</span>(a<span class="op">$</span>Product,<span class="op">-</span>a<span class="op">$</span>ct)
+g1 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(a[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,], <span class="kw">aes</span>(Product,ct))<span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>,<span class="dt">fill =</span> <span class="st">&quot;red&quot;</span>)<span class="op">+</span>
+<span class="st">         </span><span class="kw">scale_x_discrete</span>(<span class="dt">labels =</span> <span class="cf">function</span>(x) <span class="kw">str_wrap</span>(x, <span class="dt">width =</span> <span class="dv">20</span>))<span class="op">+</span>
+<span class="st">         </span><span class="kw">ggtitle</span>(<span class="st">&quot;10 Most Complaint Product&quot;</span>)<span class="op">+</span>
+<span class="st">         </span><span class="kw">theme</span>(<span class="dt">axis.text.x=</span><span class="kw">element_text</span>(<span class="dt">angle=</span><span class="dv">90</span>,<span class="dt">hjust=</span><span class="dv">1</span>,<span class="dt">vjust=</span><span class="fl">0.5</span>))
+
+g2 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(a[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,], <span class="kw">aes</span>(Product,pct))<span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>,<span class="dt">fill =</span> <span class="st">&quot;blue&quot;</span>)<span class="op">+</span>
+<span class="st">        </span><span class="kw">scale_x_discrete</span>(<span class="dt">labels =</span> <span class="cf">function</span>(x) <span class="kw">str_wrap</span>(x, <span class="dt">width =</span> <span class="dv">20</span>))<span class="op">+</span>
+<span class="st">        </span><span class="kw">ggtitle</span>(<span class="st">&quot;Percentage of Missing Rate&quot;</span>)<span class="op">+</span>
+<span class="st">        </span><span class="kw">theme</span>(<span class="dt">axis.text.x=</span><span class="kw">element_text</span>(<span class="dt">angle=</span><span class="dv">90</span>,<span class="dt">hjust=</span><span class="dv">1</span>,<span class="dt">vjust=</span><span class="fl">0.5</span>))
+
+
+<span class="kw">require</span>(gridExtra)
+<span class="kw">grid.arrange</span>(g1, g2, <span class="dt">ncol=</span><span class="dv">2</span>)</code></pre></div>
+<p><img src="Consumer_Complaints_xlu__1__files/figure-html/product-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dt &lt;-<span class="st"> </span><span class="kw">data.table</span>(dat)[,Sub.product <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="kw">ifelse</span>(<span class="kw">is.na</span>(Sub.product),<span class="st">&quot;Other&quot;</span>,Sub.product)][,ct<span class="op">:</span><span class="er">=</span><span class="st"> </span>.N, by =<span class="st"> </span>Sub.product][,pct <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="kw">sum</span>(Timely.response <span class="op">==</span><span class="st"> &quot;No&quot;</span>)<span class="op">/</span>ct, by =<span class="st"> </span>Sub.product][,.(ct,pct,Sub.product)]
+a &lt;-<span class="st"> </span><span class="kw">unique</span>(<span class="kw">na.omit</span>(dt))
+a &lt;-<span class="st"> </span>a[<span class="kw">order</span>(<span class="op">-</span>ct)]
+<span class="co">#a$Product &lt;- trimws(a$Product)</span>
+a<span class="op">$</span>Sub.product&lt;-<span class="kw">reorder</span>(a<span class="op">$</span>Sub.product,<span class="op">-</span>a<span class="op">$</span>ct)
+g1 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(a[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,], <span class="kw">aes</span>(Sub.product,ct))<span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>,<span class="dt">fill =</span> <span class="st">&quot;red&quot;</span>)<span class="op">+</span>
+<span class="st">         </span><span class="kw">scale_x_discrete</span>(<span class="dt">labels =</span> <span class="cf">function</span>(x) <span class="kw">str_wrap</span>(x, <span class="dt">width =</span> <span class="dv">20</span>))<span class="op">+</span>
+<span class="st">         </span><span class="kw">ggtitle</span>(<span class="st">&quot;10 Most Complaint Sub Product&quot;</span>)<span class="op">+</span>
+<span class="st">         </span><span class="kw">theme</span>(<span class="dt">axis.text.x=</span><span class="kw">element_text</span>(<span class="dt">angle=</span><span class="dv">90</span>,<span class="dt">hjust=</span><span class="dv">1</span>,<span class="dt">vjust=</span><span class="fl">0.5</span>))
+
+g2 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(a[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,], <span class="kw">aes</span>(Sub.product,pct))<span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>,<span class="dt">fill =</span> <span class="st">&quot;blue&quot;</span>)<span class="op">+</span>
+<span class="st">        </span><span class="kw">scale_x_discrete</span>(<span class="dt">labels =</span> <span class="cf">function</span>(x) <span class="kw">str_wrap</span>(x, <span class="dt">width =</span> <span class="dv">20</span>))<span class="op">+</span>
+<span class="st">        </span><span class="kw">ggtitle</span>(<span class="st">&quot;Percentage of Missing Rate&quot;</span>)<span class="op">+</span>
+<span class="st">        </span><span class="kw">theme</span>(<span class="dt">axis.text.x=</span><span class="kw">element_text</span>(<span class="dt">angle=</span><span class="dv">90</span>,<span class="dt">hjust=</span><span class="dv">1</span>,<span class="dt">vjust=</span><span class="fl">0.5</span>))
+
+<span class="kw">grid.arrange</span>(g1, g2, <span class="dt">ncol=</span><span class="dv">2</span>)</code></pre></div>
+<p><img src="Consumer_Complaints_xlu__1__files/figure-html/sub.product-1.png" width="672" /> Sub.Product is a detailed discription under product, which is a hierarchy variable. Thus it should be very careful when tunning the parameter when building the model later. In the figures, Mortgage and mortgage related products are most complaint products, but the missing response rate is not very high. In the major product, Debt collection has the highest rate, while in sub product,“I don’t know” which without clear description is easiest to miss.</p>
+</div>
+<div id="issue-and-sub-issue" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> Issue and Sub Issue</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dt &lt;-<span class="st"> </span><span class="kw">data.table</span>(dat)[,ct<span class="op">:</span><span class="er">=</span><span class="st"> </span>.N, by=Issue][,pct <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="kw">sum</span>(Timely.response <span class="op">==</span><span class="st"> &quot;No&quot;</span>)<span class="op">/</span>ct,by =<span class="st"> </span>Issue][,.(ct,pct,Issue)]
+dt &lt;-<span class="st"> </span><span class="kw">unique</span>(<span class="kw">na.omit</span>(dt)) 
+dt &lt;-<span class="st"> </span>dt[<span class="kw">order</span>(<span class="op">-</span>ct)]
+dt<span class="op">$</span>Issue&lt;-<span class="kw">reorder</span>(dt<span class="op">$</span>Issue,<span class="op">-</span>dt<span class="op">$</span>ct)
+<span class="kw">head</span>(dt[,<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)],<span class="dt">n =</span> <span class="dv">10</span>) </code></pre></div>
+<pre><code>##         ct                                    Issue
+##  1: 111590 Loan modification,collection,foreclosure
+##  2: 101601   Incorrect information on credit report
+##  3:  76716 Loan servicing, payments, escrow account
+##  4:  60018    Cont&#39;d attempts collect debt not owed
+##  5:  37795  Account opening, closing, or management
+##  6:  30530          Disclosure verification of debt
+##  7:  28930     Incorrect information on your report
+##  8:  26414                    Communication tactics
+##  9:  22751                 Deposits and withdrawals
+## 10:  17536       Dealing with my lender or servicer</code></pre>
+<p>There are 166 different issues and 217 sub issues. Let’s look at the not timely response rate by 10 most reported issues and sub issues.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">g1 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dt[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,], <span class="kw">aes</span>(Issue,ct))<span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>,<span class="dt">fill =</span> <span class="st">&quot;red&quot;</span>)<span class="op">+</span>
+<span class="st">         </span><span class="kw">scale_x_discrete</span>(<span class="dt">labels =</span> <span class="cf">function</span>(x) <span class="kw">str_wrap</span>(x, <span class="dt">width =</span> <span class="dv">20</span>))<span class="op">+</span>
+<span class="st">         </span><span class="kw">ggtitle</span>(<span class="st">&quot;10 Most Complaint Issues&quot;</span>)<span class="op">+</span>
+<span class="st">         </span><span class="kw">theme</span>(<span class="dt">axis.text.x=</span><span class="kw">element_text</span>(<span class="dt">angle=</span><span class="dv">90</span>,<span class="dt">hjust=</span><span class="dv">1</span>,<span class="dt">vjust=</span><span class="fl">0.5</span>))
+
+g2 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dt[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,], <span class="kw">aes</span>(Issue,pct))<span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>,<span class="dt">fill =</span> <span class="st">&quot;blue&quot;</span>)<span class="op">+</span>
+<span class="st">        </span><span class="kw">scale_x_discrete</span>(<span class="dt">labels =</span> <span class="cf">function</span>(x) <span class="kw">str_wrap</span>(x, <span class="dt">width =</span> <span class="dv">20</span>))<span class="op">+</span>
+<span class="st">        </span><span class="kw">ggtitle</span>(<span class="st">&quot;Percentage of Missing Rate&quot;</span>)<span class="op">+</span>
+<span class="st">        </span><span class="kw">theme</span>(<span class="dt">axis.text.x=</span><span class="kw">element_text</span>(<span class="dt">angle=</span><span class="dv">90</span>,<span class="dt">hjust=</span><span class="dv">1</span>,<span class="dt">vjust=</span><span class="fl">0.5</span>))
+
+<span class="kw">grid.arrange</span>(g1, g2, <span class="dt">ncol=</span><span class="dv">2</span>)</code></pre></div>
+<p><img src="Consumer_Complaints_xlu__1__files/figure-html/issue-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dt &lt;-<span class="st"> </span><span class="kw">data.table</span>(dat)[,ct<span class="op">:</span><span class="er">=</span><span class="st"> </span>.N, by=Sub.issue][,pct <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="kw">sum</span>(Timely.response <span class="op">==</span><span class="st"> &quot;No&quot;</span>)<span class="op">/</span>ct,by =<span class="st"> </span>Sub.issue][,.(ct,pct,Sub.issue)]
+dt &lt;-<span class="st"> </span><span class="kw">unique</span>(<span class="kw">na.omit</span>(dt)) 
+dt &lt;-<span class="st"> </span>dt[<span class="kw">order</span>(<span class="op">-</span>ct)]
+dt<span class="op">$</span>Sub.issue&lt;-<span class="kw">reorder</span>(dt<span class="op">$</span>Sub.issue,<span class="op">-</span>dt<span class="op">$</span>ct)
+<span class="kw">head</span>(dt[,<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)],<span class="dt">n =</span> <span class="dv">10</span>) </code></pre></div>
+<pre><code>##        ct                            Sub.issue
+##  1: 36714                       Account status
+##  2: 36319                     Debt is not mine
+##  3: 32061              Information is not mine
+##  4: 21652 Not given enough info to verify debt
+##  5: 18926                        Debt was paid
+##  6: 15813           Frequent or repeated calls
+##  7: 10864                        Account terms
+##  8: 10691    Attempted to collect wrong amount
+##  9:  9434  Information belongs to someone else
+## 10:  8742                        Public record</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">g1 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dt[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,], <span class="kw">aes</span>(Sub.issue,ct))<span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>,<span class="dt">fill =</span> <span class="st">&quot;red&quot;</span>)<span class="op">+</span>
+<span class="st">         </span><span class="kw">scale_x_discrete</span>(<span class="dt">labels =</span> <span class="cf">function</span>(x) <span class="kw">str_wrap</span>(x, <span class="dt">width =</span> <span class="dv">20</span>))<span class="op">+</span>
+<span class="st">         </span><span class="kw">ggtitle</span>(<span class="st">&quot;10 Most Complaint Issues&quot;</span>)<span class="op">+</span>
+<span class="st">         </span><span class="kw">theme</span>(<span class="dt">axis.text.x=</span><span class="kw">element_text</span>(<span class="dt">angle=</span><span class="dv">90</span>,<span class="dt">hjust=</span><span class="dv">1</span>,<span class="dt">vjust=</span><span class="fl">0.5</span>))
+
+g2 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dt[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,], <span class="kw">aes</span>(Sub.issue,pct))<span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>,<span class="dt">fill =</span> <span class="st">&quot;blue&quot;</span>)<span class="op">+</span>
+<span class="st">        </span><span class="kw">scale_x_discrete</span>(<span class="dt">labels =</span> <span class="cf">function</span>(x) <span class="kw">str_wrap</span>(x, <span class="dt">width =</span> <span class="dv">20</span>))<span class="op">+</span>
+<span class="st">        </span><span class="kw">ggtitle</span>(<span class="st">&quot;Percentage of Missing Rate&quot;</span>)<span class="op">+</span>
+<span class="st">        </span><span class="kw">theme</span>(<span class="dt">axis.text.x=</span><span class="kw">element_text</span>(<span class="dt">angle=</span><span class="dv">90</span>,<span class="dt">hjust=</span><span class="dv">1</span>,<span class="dt">vjust=</span><span class="fl">0.5</span>))
+
+<span class="kw">grid.arrange</span>(g1, g2, <span class="dt">ncol=</span><span class="dv">2</span>)</code></pre></div>
+<p><img src="Consumer_Complaints_xlu__1__files/figure-html/subissue.plot-1.png" width="672" /> ###Company</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(<span class="kw">unique</span>(dat<span class="op">$</span>Company))</code></pre></div>
+<pre><code>## [1] 4489</code></pre>
+<p>There are 4494 company in the dataset. 20 most frequent reported ones are:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dt &lt;-<span class="st"> </span><span class="kw">data.table</span>(dat)[,ct<span class="op">:</span><span class="er">=</span>.N, by=Company][,pct <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="kw">sum</span>(Timely.response <span class="op">==</span><span class="st"> &quot;No&quot;</span>)<span class="op">/</span>ct, by=Company][,.(ct,pct,Company)]
+dt &lt;-<span class="st"> </span><span class="kw">unique</span>(dt)
+dt &lt;-<span class="st"> </span>dt[<span class="kw">order</span>(<span class="op">-</span>ct)]
+dt<span class="op">$</span>Company&lt;-<span class="kw">reorder</span>(dt<span class="op">$</span>Company,<span class="op">-</span>dt<span class="op">$</span>ct)
+<span class="kw">head</span>(dt[,<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)],<span class="dt">n =</span> <span class="dv">20</span>) </code></pre></div>
+<pre><code>##        ct                                Company
+##  1: 69891  BANK OF AMERICA, NATIONAL ASSOCIATION
+##  2: 69330                          EQUIFAX, INC.
+##  3: 58273    Experian Information Solutions Inc.
+##  4: 57965                  WELLS FARGO &amp; COMPANY
+##  5: 52749 TRANSUNION INTERMEDIATE HOLDINGS, INC.
+##  6: 46828                   JPMORGAN CHASE &amp; CO.
+##  7: 38003                         CITIBANK, N.A.
+##  8: 25158               OCWEN LOAN SERVICING LLC
+##  9: 23081      CAPITAL ONE FINANCIAL CORPORATION
+## 10: 21606                Navient Solutions, LLC.
+## 11: 17319                    NATIONSTAR MORTGAGE
+## 12: 14896                    SYNCHRONY FINANCIAL
+## 13: 13512                           U.S. BANCORP
+## 14: 12179                   Ditech Financial LLC
+## 15:  9410               AMERICAN EXPRESS COMPANY
+## 16:  9375                          PNC Bank N.A.
+## 17:  8576              ENCORE CAPITAL GROUP INC.
+## 18:  7467       HSBC NORTH AMERICA HOLDINGS INC.
+## 19:  7297                          DISCOVER BANK
+## 20:  6829                   SUNTRUST BANKS, INC.</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">g1 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dt[<span class="dv">1</span><span class="op">:</span><span class="dv">20</span>,], <span class="kw">aes</span>(Company,ct))<span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>,<span class="dt">fill =</span> <span class="st">&quot;red&quot;</span>)<span class="op">+</span>
+<span class="st">         </span><span class="kw">scale_x_discrete</span>(<span class="dt">labels =</span> <span class="cf">function</span>(x) <span class="kw">str_wrap</span>(x, <span class="dt">width =</span> <span class="dv">20</span>))<span class="op">+</span>
+<span class="st">         </span><span class="kw">ggtitle</span>(<span class="st">&quot;20 Most Reported Company&quot;</span>)<span class="op">+</span>
+<span class="st">         </span><span class="kw">theme</span>(<span class="dt">axis.text.x=</span><span class="kw">element_text</span>(<span class="dt">angle=</span><span class="dv">90</span>,<span class="dt">hjust=</span><span class="dv">1</span>,<span class="dt">vjust=</span><span class="fl">0.5</span>))
+
+g2 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dt[<span class="dv">1</span><span class="op">:</span><span class="dv">20</span>,], <span class="kw">aes</span>(Company,pct))<span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>,<span class="dt">fill =</span> <span class="st">&quot;blue&quot;</span>)<span class="op">+</span>
+<span class="st">        </span><span class="kw">scale_x_discrete</span>(<span class="dt">labels =</span> <span class="cf">function</span>(x) <span class="kw">str_wrap</span>(x, <span class="dt">width =</span> <span class="dv">20</span>))<span class="op">+</span>
+<span class="st">        </span><span class="kw">ggtitle</span>(<span class="st">&quot;Percentage of Missing Rate&quot;</span>)<span class="op">+</span>
+<span class="st">        </span><span class="kw">theme</span>(<span class="dt">axis.text.x=</span><span class="kw">element_text</span>(<span class="dt">angle=</span><span class="dv">90</span>,<span class="dt">hjust=</span><span class="dv">1</span>,<span class="dt">vjust=</span><span class="fl">0.5</span>))
+<span class="kw">require</span>(gridExtra)
+<span class="kw">grid.arrange</span>(g1, g2, <span class="dt">nrow=</span><span class="dv">2</span>)</code></pre></div>
+<p><img src="Consumer_Complaints_xlu__1__files/figure-html/company.plot-1.png" width="960" /></p>
+</div>
+<div id="state-and-zipcode" class="section level3">
+<h3><span class="header-section-number">2.1.3</span> State and Zipcode</h3>
+<p>Top 20 complaint reported states are</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dt &lt;-<span class="st"> </span><span class="kw">data.table</span>(dat)[,ct <span class="op">:</span><span class="er">=</span><span class="st"> </span>.N, by=State][,pct <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="kw">sum</span>(Timely.response <span class="op">==</span><span class="st"> &quot;No&quot;</span>)<span class="op">/</span>ct,by =<span class="st"> </span>State][,.(ct,pct,State)]
+dt &lt;-<span class="st"> </span><span class="kw">unique</span>(dt)
+dt &lt;-<span class="st"> </span>dt[<span class="kw">order</span>(<span class="op">-</span>ct)]
+dt<span class="op">$</span>State&lt;-<span class="kw">reorder</span>(dt<span class="op">$</span>State,<span class="op">-</span>dt<span class="op">$</span>ct)
+<span class="kw">head</span>(dt[,<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)],<span class="dt">n =</span> <span class="dv">20</span>) </code></pre></div>
+<pre><code>##         ct State
+##  1: 126748    CA
+##  2:  85006    FL
+##  3:  70922    TX
+##  4:  60330    NY
+##  5:  44185    GA
+##  6:  34503    NJ
+##  7:  33263    IL
+##  8:  31321    PA
+##  9:  27783    VA
+## 10:  27473    MD
+## 11:  27124    OH
+## 12:  26195    NC
+## 13:  21946    MI
+## 14:  19790    AZ
+## 15:  18392    WA
+## 16:  16935    MA
+## 17:  15227    CO
+## 18:  14311    TN
+## 19:  12226    SC
+## 20:  11913    MO</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">g1 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dt[<span class="dv">1</span><span class="op">:</span><span class="dv">20</span>,], <span class="kw">aes</span>(State,ct))<span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>,<span class="dt">fill =</span> <span class="st">&quot;red&quot;</span>)<span class="op">+</span>
+<span class="st">         </span><span class="kw">scale_x_discrete</span>(<span class="dt">labels =</span> <span class="cf">function</span>(x) <span class="kw">str_wrap</span>(x, <span class="dt">width =</span> <span class="dv">20</span>))<span class="op">+</span>
+<span class="st">         </span><span class="kw">ggtitle</span>(<span class="st">&quot;20 Most Complaint State&quot;</span>)<span class="op">+</span>
+<span class="st">         </span><span class="kw">theme</span>(<span class="dt">axis.text.x=</span><span class="kw">element_text</span>(<span class="dt">angle=</span><span class="dv">90</span>,<span class="dt">hjust=</span><span class="dv">1</span>,<span class="dt">vjust=</span><span class="fl">0.5</span>))
+
+g2 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dt[<span class="dv">1</span><span class="op">:</span><span class="dv">20</span>,], <span class="kw">aes</span>(State,pct))<span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>,<span class="dt">fill =</span> <span class="st">&quot;blue&quot;</span>)<span class="op">+</span>
+<span class="st">        </span><span class="kw">scale_x_discrete</span>(<span class="dt">labels =</span> <span class="cf">function</span>(x) <span class="kw">str_wrap</span>(x, <span class="dt">width =</span> <span class="dv">20</span>))<span class="op">+</span>
+<span class="st">        </span><span class="kw">ggtitle</span>(<span class="st">&quot;Percentage of Missing Rate&quot;</span>)<span class="op">+</span>
+<span class="st">        </span><span class="kw">theme</span>(<span class="dt">axis.text.x=</span><span class="kw">element_text</span>(<span class="dt">angle=</span><span class="dv">90</span>,<span class="dt">hjust=</span><span class="dv">1</span>,<span class="dt">vjust=</span><span class="fl">0.5</span>))
+<span class="kw">require</span>(gridExtra)
+<span class="kw">grid.arrange</span>(g1, g2, <span class="dt">nrow=</span><span class="dv">2</span>)</code></pre></div>
+<p><img src="Consumer_Complaints_xlu__1__files/figure-html/state.plot-1.png" width="960" /> The missing rate seems quite flat over the states. Zipcode is strongly corelated with states, but with finer geographic resolution. However, the format of the zip code is not consistant. There are 3-digit and 5-digit format. I first convert them all into 3 digits.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat<span class="op">$</span>ZIP3 =<span class="st"> </span><span class="kw">substr</span>(dat<span class="op">$</span>ZIP.code,<span class="dv">1</span>,<span class="dv">3</span>)</code></pre></div>
+<p>After taking a look at the data, there are some clearly wrong, such as “89!”,or “6-4”. I will clean this again.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="kw">unique</span>(dat<span class="op">$</span>ZIP3)
+<span class="kw">sum</span>(<span class="kw">grepl</span>(<span class="st">&quot;</span><span class="ch">\\</span><span class="st">D&quot;</span>,a))</code></pre></div>
+<pre><code>## [1] 31</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat &lt;-<span class="st"> </span><span class="kw">data.table</span>(dat)[,ZIP3 <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="kw">ifelse</span>(<span class="kw">grepl</span>(<span class="st">&quot;</span><span class="ch">\\</span><span class="st">D&quot;</span>,ZIP3)<span class="op">|</span><span class="kw">is.na</span>(ZIP3),<span class="ot">NA</span>,ZIP3)]
+<span class="co">#After ZIP3 is created, the original variable ZIP.code should be droped. I will first save it to an array of vector and drop them together in final model data preparation.</span>
+var.drop =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;ZIP.code&quot;</span>)</code></pre></div>
+<p>We can take a look at the first 20 most complaints in 3-digit zipcode.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dt &lt;-<span class="st"> </span><span class="kw">data.table</span>(dat)[,ct <span class="op">:</span><span class="er">=</span><span class="st"> </span>.N, by=ZIP3][,pct <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="kw">sum</span>(Timely.response <span class="op">==</span><span class="st"> &quot;No&quot;</span>)<span class="op">/</span>ct,by =<span class="st"> </span>ZIP3][,.(ct,pct,ZIP3)]
+dt &lt;-<span class="st"> </span><span class="kw">unique</span>(dt)
+dt &lt;-<span class="st"> </span>dt[<span class="kw">order</span>(<span class="op">-</span>ct)]
+dt<span class="op">$</span>ZIP3&lt;-<span class="kw">reorder</span>(dt<span class="op">$</span>ZIP3,<span class="op">-</span>dt<span class="op">$</span>ct)
+<span class="kw">head</span>(dt[,<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)],<span class="dt">n =</span> <span class="dv">20</span>) </code></pre></div>
+<pre><code>##        ct ZIP3
+##  1: 14939  300
+##  2: 13141   NA
+##  3: 10199  606
+##  4:  9994  331
+##  5:  9701  900
+##  6:  9573  770
+##  7:  9175  750
+##  8:  9056  330
+##  9:  8973  945
+## 10:  8680  112
+## 11:  8517  334
+## 12:  7725  303
+## 13:  7539  207
+## 14:  7360  100
+## 15:  6734  070
+## 16:  6417  926
+## 17:  6357  891
+## 18:  6111  302
+## 19:  5975  913
+## 20:  5876  191</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">g1 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dt[<span class="dv">1</span><span class="op">:</span><span class="dv">20</span>,], <span class="kw">aes</span>(ZIP3,ct))<span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>,<span class="dt">fill =</span> <span class="st">&quot;red&quot;</span>)<span class="op">+</span>
+<span class="st">         </span><span class="kw">scale_x_discrete</span>(<span class="dt">labels =</span> <span class="cf">function</span>(x) <span class="kw">str_wrap</span>(x, <span class="dt">width =</span> <span class="dv">20</span>))<span class="op">+</span>
+<span class="st">         </span><span class="kw">ggtitle</span>(<span class="st">&quot;20 Most Complaint 3-digit Zipcode&quot;</span>)<span class="op">+</span>
+<span class="st">         </span><span class="kw">theme</span>(<span class="dt">axis.text.x=</span><span class="kw">element_text</span>(<span class="dt">angle=</span><span class="dv">90</span>,<span class="dt">hjust=</span><span class="dv">1</span>,<span class="dt">vjust=</span><span class="fl">0.5</span>))
+
+g2 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dt[<span class="dv">1</span><span class="op">:</span><span class="dv">20</span>,], <span class="kw">aes</span>(ZIP3,pct))<span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>,<span class="dt">fill =</span> <span class="st">&quot;blue&quot;</span>)<span class="op">+</span>
+<span class="st">        </span><span class="kw">scale_x_discrete</span>(<span class="dt">labels =</span> <span class="cf">function</span>(x) <span class="kw">str_wrap</span>(x, <span class="dt">width =</span> <span class="dv">20</span>))<span class="op">+</span>
+<span class="st">        </span><span class="kw">ggtitle</span>(<span class="st">&quot;Percentage of Missing Rate&quot;</span>)<span class="op">+</span>
+<span class="st">        </span><span class="kw">theme</span>(<span class="dt">axis.text.x=</span><span class="kw">element_text</span>(<span class="dt">angle=</span><span class="dv">90</span>,<span class="dt">hjust=</span><span class="dv">1</span>,<span class="dt">vjust=</span><span class="fl">0.5</span>))
+<span class="kw">require</span>(gridExtra)
+<span class="kw">grid.arrange</span>(g1, g2, <span class="dt">nrow=</span><span class="dv">2</span>)</code></pre></div>
+<p><img src="Consumer_Complaints_xlu__1__files/figure-html/zipcode.plot-1.png" width="960" /> There are over 13141 missing records in zipcode, but the not-timely-response rate is around average.</p>
+</div>
+<div id="tags" class="section level3">
+<h3><span class="header-section-number">2.1.4</span> Tags</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unique</span>(dat<span class="op">$</span>Tags)</code></pre></div>
+<pre><code>## [1] NA                              &quot;Older American&quot;               
+## [3] &quot;Servicemember&quot;                 &quot;Older American, Servicemember&quot;</code></pre>
+<p>There are 4 different tags, I will plot the percetage of missing timely response rate over the Tags.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat &lt;-<span class="st"> </span><span class="kw">data.table</span>(dat)[,Tags <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="kw">ifelse</span>(<span class="kw">is.na</span>(Tags),<span class="st">&quot;Major&quot;</span>,Tags)]
+dt &lt;-<span class="st"> </span><span class="kw">data.table</span>(dat)[,ct <span class="op">:</span><span class="er">=</span><span class="st"> </span>.N, by=Tags][,pct <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="kw">sum</span>(Timely.response <span class="op">==</span><span class="st"> &quot;No&quot;</span>)<span class="op">/</span>ct,by =<span class="st"> </span>Tags][,.(ct,pct,Tags)]
+dt &lt;-<span class="st"> </span><span class="kw">unique</span>(dt)
+dt &lt;-<span class="st"> </span>dt[<span class="kw">order</span>(<span class="op">-</span>ct)]
+dt<span class="op">$</span>Tags&lt;-<span class="kw">reorder</span>(dt<span class="op">$</span>Tags,<span class="op">-</span>dt<span class="op">$</span>ct)
+g1 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dt, <span class="kw">aes</span>(Tags,ct))<span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>,<span class="dt">fill =</span> <span class="st">&quot;red&quot;</span>)<span class="op">+</span>
+<span class="st">         </span><span class="kw">scale_x_discrete</span>(<span class="dt">labels =</span> <span class="cf">function</span>(x) <span class="kw">str_wrap</span>(x, <span class="dt">width =</span> <span class="dv">20</span>))<span class="op">+</span>
+<span class="st">         </span><span class="kw">ggtitle</span>(<span class="st">&quot;Complaints by Tags&quot;</span>)<span class="op">+</span>
+<span class="st">         </span><span class="kw">theme</span>(<span class="dt">axis.text.x=</span><span class="kw">element_text</span>(<span class="dt">angle=</span><span class="dv">90</span>,<span class="dt">hjust=</span><span class="dv">1</span>,<span class="dt">vjust=</span><span class="fl">0.5</span>))
+
+g2 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dt, <span class="kw">aes</span>(Tags,pct))<span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>,<span class="dt">fill =</span> <span class="st">&quot;blue&quot;</span>)<span class="op">+</span>
+<span class="st">        </span><span class="kw">scale_x_discrete</span>(<span class="dt">labels =</span> <span class="cf">function</span>(x) <span class="kw">str_wrap</span>(x, <span class="dt">width =</span> <span class="dv">20</span>))<span class="op">+</span>
+<span class="st">        </span><span class="kw">ggtitle</span>(<span class="st">&quot;Percentage of Missing Rate&quot;</span>)<span class="op">+</span>
+<span class="st">        </span><span class="kw">theme</span>(<span class="dt">axis.text.x=</span><span class="kw">element_text</span>(<span class="dt">angle=</span><span class="dv">90</span>,<span class="dt">hjust=</span><span class="dv">1</span>,<span class="dt">vjust=</span><span class="fl">0.5</span>))
+<span class="kw">require</span>(gridExtra)
+<span class="kw">grid.arrange</span>(g1, g2, <span class="dt">ncol=</span><span class="dv">2</span>)</code></pre></div>
+<p><img src="Consumer_Complaints_xlu__1__files/figure-html/unnamed-chunk-12-1.png" width="672" /> The forms that were submitted by the service member has the highest missing timely response rate.</p>
+</div>
+<div id="submitted.via" class="section level3">
+<h3><span class="header-section-number">2.1.5</span> Submitted.via</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unique</span>(dat<span class="op">$</span>Submitted.via)</code></pre></div>
+<pre><code>## [1] &quot;Referral&quot;    &quot;Web&quot;         &quot;Phone&quot;       &quot;Fax&quot;         &quot;Postal mail&quot;
+## [6] &quot;Email&quot;</code></pre>
+<p>There are 6 types of submission. Let’s look at their distribution and missing timely response rate.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dt &lt;-<span class="st"> </span><span class="kw">data.table</span>(dat)[,ct <span class="op">:</span><span class="er">=</span><span class="st"> </span>.N, by=Submitted.via][,pct <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="kw">sum</span>(Timely.response <span class="op">==</span><span class="st"> &quot;No&quot;</span>)<span class="op">/</span>ct,by =<span class="st"> </span>Submitted.via][,.(ct,pct,Submitted.via)]
+dt &lt;-<span class="st"> </span><span class="kw">unique</span>(dt)
+dt &lt;-<span class="st"> </span>dt[<span class="kw">order</span>(<span class="op">-</span>ct)]
+dt<span class="op">$</span>Submitted.via&lt;-<span class="kw">reorder</span>(dt<span class="op">$</span>Submitted.via,<span class="op">-</span>dt<span class="op">$</span>ct)
+g1 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dt, <span class="kw">aes</span>(Submitted.via,ct))<span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>,<span class="dt">fill =</span> <span class="st">&quot;red&quot;</span>)<span class="op">+</span>
+<span class="st">         </span><span class="kw">scale_x_discrete</span>(<span class="dt">labels =</span> <span class="cf">function</span>(x) <span class="kw">str_wrap</span>(x, <span class="dt">width =</span> <span class="dv">20</span>))<span class="op">+</span>
+<span class="st">         </span><span class="kw">ggtitle</span>(<span class="st">&quot;Complaints by Tags&quot;</span>)<span class="op">+</span>
+<span class="st">         </span><span class="kw">theme</span>(<span class="dt">axis.text.x=</span><span class="kw">element_text</span>(<span class="dt">angle=</span><span class="dv">90</span>,<span class="dt">hjust=</span><span class="dv">1</span>,<span class="dt">vjust=</span><span class="fl">0.5</span>))
+
+g2 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dt, <span class="kw">aes</span>(Submitted.via,pct))<span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>,<span class="dt">fill =</span> <span class="st">&quot;blue&quot;</span>)<span class="op">+</span>
+<span class="st">        </span><span class="kw">scale_x_discrete</span>(<span class="dt">labels =</span> <span class="cf">function</span>(x) <span class="kw">str_wrap</span>(x, <span class="dt">width =</span> <span class="dv">20</span>))<span class="op">+</span>
+<span class="st">        </span><span class="kw">ggtitle</span>(<span class="st">&quot;Percentage of Missing Rate&quot;</span>)<span class="op">+</span>
+<span class="st">        </span><span class="kw">theme</span>(<span class="dt">axis.text.x=</span><span class="kw">element_text</span>(<span class="dt">angle=</span><span class="dv">90</span>,<span class="dt">hjust=</span><span class="dv">1</span>,<span class="dt">vjust=</span><span class="fl">0.5</span>))
+<span class="kw">require</span>(gridExtra)
+<span class="kw">grid.arrange</span>(g1, g2, <span class="dt">ncol=</span><span class="dv">2</span>)</code></pre></div>
+<p><img src="Consumer_Complaints_xlu__1__files/figure-html/unnamed-chunk-14-1.png" width="672" /> ###Consumer.consent.provided These two variables are strongly correlated. Only when the consumer consent was provided, the complaint narrative can be read by the public. I first look at the flag for consumer consent.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unique</span>(dat<span class="op">$</span>Consumer.consent.provided)</code></pre></div>
+<pre><code>## [1] &quot;N/A&quot;                  &quot;Consent provided&quot;     &quot;Consent not provided&quot;
+## [4] &quot;Other&quot;                NA                     &quot;Consent withdrawn&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat &lt;-<span class="st"> </span>dat <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate_at</span>(<span class="st">&quot;Consumer.consent.provided&quot;</span>, <span class="kw">funs</span>(<span class="kw">ifelse</span>(.<span class="op">==</span><span class="st">&quot;N/A&quot;</span>,<span class="ot">NA</span>,.)))</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">b&lt;-dat[<span class="op">!</span><span class="kw">is.na</span>(dat<span class="op">$</span>Consumer.complaint.narrative),<span class="st">&quot;Consumer.consent.provided&quot;</span>]
+<span class="kw">unique</span>(b)</code></pre></div>
+<pre><code>## [1] &quot;Consent provided&quot;</code></pre>
+<p>Only when the consent is provided, the narrative shown, so we can combine NA into “Other”.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat &lt;-<span class="st"> </span>dat <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate_at</span>(<span class="st">&quot;Consumer.consent.provided&quot;</span>,<span class="kw">funs</span>(<span class="kw">ifelse</span>(<span class="kw">is.na</span>(.),<span class="st">&quot;Other&quot;</span>,.)))
+dt &lt;-<span class="st"> </span><span class="kw">data.table</span>(dat)[,ct <span class="op">:</span><span class="er">=</span><span class="st"> </span>.N, by=Consumer.consent.provided][,pct <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="kw">sum</span>(Timely.response <span class="op">==</span><span class="st"> &quot;No&quot;</span>)<span class="op">/</span>ct,by =<span class="st"> </span>Consumer.consent.provided][,.(ct,pct,Consumer.consent.provided)]
+dt &lt;-<span class="st"> </span><span class="kw">unique</span>(dt)
+dt &lt;-<span class="st"> </span>dt[<span class="kw">order</span>(<span class="op">-</span>ct)]
+dt<span class="op">$</span>Consumer.consent.provided&lt;-<span class="kw">reorder</span>(dt<span class="op">$</span>Consumer.consent.provided,<span class="op">-</span>dt<span class="op">$</span>ct)
+g1 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dt, <span class="kw">aes</span>(Consumer.consent.provided,ct))<span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>,<span class="dt">fill =</span> <span class="st">&quot;red&quot;</span>)<span class="op">+</span>
+<span class="st">         </span><span class="kw">scale_x_discrete</span>(<span class="dt">labels =</span> <span class="cf">function</span>(x) <span class="kw">str_wrap</span>(x, <span class="dt">width =</span> <span class="dv">20</span>))<span class="op">+</span>
+<span class="st">         </span><span class="kw">ggtitle</span>(<span class="st">&quot;Complaints by Consumer Consent Provided&quot;</span>)<span class="op">+</span>
+<span class="st">         </span><span class="kw">theme</span>(<span class="dt">axis.text.x=</span><span class="kw">element_text</span>(<span class="dt">angle=</span><span class="dv">90</span>,<span class="dt">hjust=</span><span class="dv">1</span>,<span class="dt">vjust=</span><span class="fl">0.5</span>))
+
+g2 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dt, <span class="kw">aes</span>(Consumer.consent.provided,pct))<span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>,<span class="dt">fill =</span> <span class="st">&quot;blue&quot;</span>)<span class="op">+</span>
+<span class="st">        </span><span class="kw">scale_x_discrete</span>(<span class="dt">labels =</span> <span class="cf">function</span>(x) <span class="kw">str_wrap</span>(x, <span class="dt">width =</span> <span class="dv">20</span>))<span class="op">+</span>
+<span class="st">        </span><span class="kw">ggtitle</span>(<span class="st">&quot;Percentage of Missing Rate&quot;</span>)<span class="op">+</span>
+<span class="st">        </span><span class="kw">theme</span>(<span class="dt">axis.text.x=</span><span class="kw">element_text</span>(<span class="dt">angle=</span><span class="dv">90</span>,<span class="dt">hjust=</span><span class="dv">1</span>,<span class="dt">vjust=</span><span class="fl">0.5</span>))
+<span class="kw">require</span>(gridExtra)
+<span class="kw">grid.arrange</span>(g1, g2, <span class="dt">ncol=</span><span class="dv">2</span>)</code></pre></div>
+<p><img src="Consumer_Complaints_xlu__1__files/figure-html/unnamed-chunk-17-1.png" width="672" /> ### Sentiment Analysi for Consumer Complaint Narrative</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
+<span class="kw">library</span>(tidytext)
+<span class="kw">library</span>(tidyr)
+dt &lt;-<span class="st"> </span>dat <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(<span class="kw">c</span>(Complaint.ID,Consumer.complaint.narrative))<span class="op">%&gt;%</span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">is.na</span>(Consumer.complaint.narrative))
+word_tb &lt;-<span class="st"> </span>dt <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">unnest_tokens</span>(word, Consumer.complaint.narrative) 
+sentiment_tb &lt;-<span class="st"> </span>word_tb <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(Complaint.ID) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">word_count =</span> <span class="dv">1</span><span class="op">:</span><span class="kw">n</span>()) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">inner_join</span>(<span class="kw">get_sentiments</span>(<span class="st">&quot;bing&quot;</span>))<span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">count</span>(Complaint.ID, sentiment) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">spread</span>(sentiment,n,<span class="dt">fill =</span> <span class="dv">0</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">sentiment =</span> positive <span class="op">-</span><span class="st"> </span>negative)
+
+
+<span class="kw">dim</span>(dt)[<span class="dv">1</span>]<span class="op">-</span><span class="kw">dim</span>(sentiment_tb)[<span class="dv">1</span>]</code></pre></div>
+<pre><code>## [1] 14961</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(sentiment_tb)</code></pre></div>
+<pre><code>## # A tibble: 6 x 4
+##   Complaint.ID negative positive sentiment
+##          &lt;int&gt;    &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
+## 1      1290155     9.00     0        -9.00
+## 2      1290181     3.00     0        -3.00
+## 3      1290198    12.0     12.0       0   
+## 4      1290200     8.00     2.00     -6.00
+## 5      1290244     1.00     0        -1.00
+## 6      1290251     4.00     6.00      2.00</code></pre>
+<p>There are 14961 narratives that have neither possitive nor negative words. I will fill those records with all zero. Let’s look at sentiments distribution.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(sentiment_tb<span class="op">$</span>sentiment)</code></pre></div>
+<pre><code>##     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+## -112.000   -4.000   -2.000   -2.464    0.000   49.000</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">g &lt;-<span class="st"> </span><span class="kw">ggplot</span>(sentiment_tb,<span class="kw">aes</span>(sentiment))<span class="op">+</span>
+<span class="st">                    </span><span class="kw">geom_histogram</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>)<span class="op">+</span>
+<span class="st">                    </span><span class="kw">theme_bw</span>()
+<span class="kw">ggplotly</span>(g)</code></pre></div>
+<p><div id="35e46ebe4df5" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="35e46ebe4df5">{"x":{"data":[{"orientation":"v","width":[5.55172413793105,5.55172413793105,5.55172413793105,5.55172413793105,5.55172413793105,5.55172413793105,5.55172413793105,5.55172413793102,5.55172413793105,5.55172413793105,5.55172413793103,5.55172413793103,5.55172413793103,5.55172413793105,5.55172413793103,5.55172413793103,5.55172413793103,5.55172413793103,5.55172413793105,5.55172413793103,5.55172413793103,5.55172413793103,5.55172413793103,5.55172413793103,5.55172413793105,5.55172413793102,5.55172413793105,5.55172413793105,5.55172413793102,5.55172413793105],"base":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"x":[-111.034482758621,-105.48275862069,-99.9310344827586,-94.3793103448276,-88.8275862068965,-83.2758620689655,-77.7241379310345,-72.1724137931034,-66.6206896551724,-61.0689655172414,-55.5172413793103,-49.9655172413793,-44.4137931034483,-38.8620689655172,-33.3103448275862,-27.7586206896552,-22.2068965517241,-16.6551724137931,-11.1034482758621,-5.55172413793102,7.105427357601e-015,5.55172413793104,11.1034482758621,16.6551724137931,22.2068965517241,27.7586206896552,33.3103448275862,38.8620689655173,44.4137931034483,49.9655172413793],"y":[1,0,0,0,0,2,0,2,3,2,11,10,29,68,130,412,862,3280,9586,58067,99228,10989,872,155,38,6,3,3,2,1],"text":["count:     1<br />sentiment: -1.110345e+02","count:     0<br />sentiment: -1.054828e+02","count:     0<br />sentiment: -9.993103e+01","count:     0<br />sentiment: -9.437931e+01","count:     0<br />sentiment: -8.882759e+01","count:     2<br />sentiment: -8.327586e+01","count:     0<br />sentiment: -7.772414e+01","count:     2<br />sentiment: -7.217241e+01","count:     3<br />sentiment: -6.662069e+01","count:     2<br />sentiment: -6.106897e+01","count:    11<br />sentiment: -5.551724e+01","count:    10<br />sentiment: -4.996552e+01","count:    29<br />sentiment: -4.441379e+01","count:    68<br />sentiment: -3.886207e+01","count:   130<br />sentiment: -3.331034e+01","count:   412<br />sentiment: -2.775862e+01","count:   862<br />sentiment: -2.220690e+01","count:  3280<br />sentiment: -1.665517e+01","count:  9586<br />sentiment: -1.110345e+01","count: 58067<br />sentiment: -5.551724e+00","count: 99228<br />sentiment:  7.105427e-15","count: 10989<br />sentiment:  5.551724e+00","count:   872<br />sentiment:  1.110345e+01","count:   155<br />sentiment:  1.665517e+01","count:    38<br />sentiment:  2.220690e+01","count:     6<br />sentiment:  2.775862e+01","count:     3<br />sentiment:  3.331034e+01","count:     3<br />sentiment:  3.886207e+01","count:     2<br />sentiment:  4.441379e+01","count:     1<br />sentiment:  4.996552e+01"],"type":"bar","marker":{"autocolorscale":false,"color":"rgba(89,89,89,1)","line":{"width":1.88976377952756,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":26.2283105022831,"r":7.30593607305936,"b":40.1826484018265,"l":60.6392694063927},"plot_bgcolor":"rgba(255,255,255,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"type":"linear","autorange":false,"tickmode":"array","range":[-122.137931034483,61.0689655172414],"ticktext":["-100","-50","0","50"],"tickvals":[-100,-50,1.4210854715202e-014,50],"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":"sentiment","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"type":"linear","autorange":false,"tickmode":"array","range":[-4961.4,104189.4],"ticktext":["0","25000","50000","75000","100000"],"tickvals":[0,25000,50000,75000,100000],"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":"count","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":"transparent","line":{"color":"rgba(51,51,51,1)","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"barmode":"stack","bargap":0,"hovermode":"closest"},"source":"A","attrs":{"35e471435cbc":{"x":{},"type":"ggplotly"}},"cur_data":"35e471435cbc","visdat":{"35e471435cbc":["function (y) ","x"]},"config":{"modeBarButtonsToAdd":[{"name":"Collaborate","icon":{"width":1000,"ascent":500,"descent":-50,"path":"M487 375c7-10 9-23 5-36l-79-259c-3-12-11-23-22-31-11-8-22-12-35-12l-263 0c-15 0-29 5-43 15-13 10-23 23-28 37-5 13-5 25-1 37 0 0 0 3 1 7 1 5 1 8 1 11 0 2 0 4-1 6 0 3-1 5-1 6 1 2 2 4 3 6 1 2 2 4 4 6 2 3 4 5 5 7 5 7 9 16 13 26 4 10 7 19 9 26 0 2 0 5 0 9-1 4-1 6 0 8 0 2 2 5 4 8 3 3 5 5 5 7 4 6 8 15 12 26 4 11 7 19 7 26 1 1 0 4 0 9-1 4-1 7 0 8 1 2 3 5 6 8 4 4 6 6 6 7 4 5 8 13 13 24 4 11 7 20 7 28 1 1 0 4 0 7-1 3-1 6-1 7 0 2 1 4 3 6 1 1 3 4 5 6 2 3 3 5 5 6 1 2 3 5 4 9 2 3 3 7 5 10 1 3 2 6 4 10 2 4 4 7 6 9 2 3 4 5 7 7 3 2 7 3 11 3 3 0 8 0 13-1l0-1c7 2 12 2 14 2l218 0c14 0 25-5 32-16 8-10 10-23 6-37l-79-259c-7-22-13-37-20-43-7-7-19-10-37-10l-248 0c-5 0-9-2-11-5-2-3-2-7 0-12 4-13 18-20 41-20l264 0c5 0 10 2 16 5 5 3 8 6 10 11l85 282c2 5 2 10 2 17 7-3 13-7 17-13z m-304 0c-1-3-1-5 0-7 1-1 3-2 6-2l174 0c2 0 4 1 7 2 2 2 4 4 5 7l6 18c0 3 0 5-1 7-1 1-3 2-6 2l-173 0c-3 0-5-1-8-2-2-2-4-4-4-7z m-24-73c-1-3-1-5 0-7 2-2 3-2 6-2l174 0c2 0 5 0 7 2 3 2 4 4 5 7l6 18c1 2 0 5-1 6-1 2-3 3-5 3l-174 0c-3 0-5-1-7-3-3-1-4-4-5-6z"},"click":"function(gd) { \n        // is this being viewed in RStudio?\n        if (location.search == '?viewer_pane=1') {\n          alert('To learn about plotly for collaboration, visit:\\n https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html');\n        } else {\n          window.open('https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html', '_blank');\n        }\n      }"}],"cloud":false},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1}},"base_url":"https://plot.ly"},"evals":["config.modeBarButtonsToAdd.0.click"],"jsHooks":{"render":[{"code":"function(el, x) { var ctConfig = crosstalk.var('plotlyCrosstalkOpts').set({\"on\":\"plotly_click\",\"persistent\":false,\"dynamic\":false,\"selectize\":false,\"opacityDim\":0.2,\"selected\":{\"opacity\":1}}); }","data":null}]}}</script> Append new variables to original database. For all other records without narratives published, I fill them with zero.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat <span class="op">%&gt;%</span><span class="kw">left_join</span>(sentiment_tb, <span class="dt">by =</span> <span class="st">&quot;Complaint.ID&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">                         </span><span class="kw">mutate_at</span>(<span class="kw">vars</span>(negative,positive),<span class="kw">funs</span>(<span class="kw">ifelse</span>(<span class="kw">is.na</span>(.),<span class="dv">0</span>,.)))-&gt;dat
+<span class="co">#We will keep the number of negative and positive, drop sentiment in the final model data</span>
+var.drop =<span class="st"> </span><span class="kw">c</span>(var.drop,<span class="st">&quot;Consumer.complaint.narrative&quot;</span>,<span class="st">&quot;sentiment&quot;</span>)</code></pre></div>
+</div>
+</div>
+</div>
+<div id="prepare-final-data-for-building-model" class="section level1">
+<h1><span class="header-section-number">3</span> Prepare final data for building model</h1>
+<div id="traget" class="section level2">
+<h2><span class="header-section-number">3.1</span> Traget</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat &lt;-dat <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">y =</span> <span class="kw">ifelse</span>(Timely.response<span class="op">==</span><span class="st">&quot;No&quot;</span>,<span class="dv">1</span>,<span class="dv">0</span>))
+var.drop =<span class="st"> </span><span class="kw">c</span>(var.drop,<span class="st">&quot;Timely.response&quot;</span>)</code></pre></div>
+</div>
+<div id="date-time-variables" class="section level2">
+<h2><span class="header-section-number">3.2</span> date time variables</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat &lt;-<span class="st"> </span>dat<span class="op">%&gt;%</span><span class="kw">mutate_at</span>(<span class="kw">vars</span>(Date.received,Date.sent.to.company),<span class="kw">funs</span>(<span class="kw">mdy</span>(.)))<span class="op">%&gt;%</span>
+<span class="st">        </span><span class="kw">mutate</span>(<span class="dt">date.r.year =</span> <span class="kw">year</span>(Date.received),
+               <span class="dt">date.r.mon =</span> <span class="kw">month</span>(Date.received),
+               <span class="dt">date.r.day =</span> <span class="kw">day</span>(Date.received),
+               <span class="dt">date.r.weekd =</span> <span class="kw">wday</span>(Date.received),
+               <span class="dt">date.s.year =</span> <span class="kw">year</span>(Date.sent.to.company),
+               <span class="dt">date.s.mon =</span> <span class="kw">month</span>(Date.sent.to.company),
+               <span class="dt">date.s.day =</span> <span class="kw">day</span>(Date.sent.to.company),
+               <span class="dt">date.s.weekd =</span> <span class="kw">wday</span>(Date.sent.to.company))
+var.drop =<span class="st"> </span><span class="kw">c</span>(var.drop,<span class="st">&quot;Date.received&quot;</span>,<span class="st">&quot;Date.sent.to.company&quot;</span>,<span class="st">&quot;Complaint.ID&quot;</span>,<span class="st">&quot;&quot;</span>)</code></pre></div>
+</div>
+<div id="feature-engineering-and-missing-value-imputation-for-nomial-variables" class="section level2">
+<h2><span class="header-section-number">3.3</span> Feature Engineering and Missing Value Imputation for Nomial Variables</h2>
+<p>I will use two methods for nomial vairables. For those with less than 20 levels, all missing values will be grouped as another level, one-hot or binary encoding can be easily applied to the model data without increasing the data size dramatically. For high cardiality variables, I’m going to use mean encoding.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cat &lt;-<span class="st"> </span><span class="kw">sapply</span>(dat, is.character)
+dat.cat &lt;-<span class="st"> </span>dat[ ,cat]
+dat.cat &lt;-<span class="st"> </span>dat.cat[,<span class="op">!</span><span class="kw">names</span>(dat.cat)<span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(var.drop,<span class="st">&quot;Complaint.ID&quot;</span>,<span class="st">&quot;Consumer.complaint.narrative&quot;</span>)]
+dat.cat <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sapply</span>(<span class="cf">function</span>(x)<span class="kw">length</span>(<span class="kw">unique</span>(x))) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>() -&gt;<span class="st"> </span>tbl.cat
+
+<span class="kw">names</span>(tbl.cat) &lt;-<span class="st"> &quot;levels&quot;</span>
+tbl.cat<span class="op">$</span>MissingNum &lt;-<span class="kw">sapply</span>(dat.cat,<span class="cf">function</span>(x)<span class="kw">sum</span>(<span class="kw">is.na</span>(x)))
+<span class="kw">kable</span>(tbl.cat,<span class="st">&quot;html&quot;</span>)</code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+levels
+</th>
+<th style="text-align:right;">
+MissingNum
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Product
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sub.product
+</td>
+<td style="text-align:right;">
+76
+</td>
+<td style="text-align:right;">
+232215
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Issue
+</td>
+<td style="text-align:right;">
+166
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sub.issue
+</td>
+<td style="text-align:right;">
+218
+</td>
+<td style="text-align:right;">
+473681
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Company
+</td>
+<td style="text-align:right;">
+4489
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+State
+</td>
+<td style="text-align:right;">
+63
+</td>
+<td style="text-align:right;">
+9284
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Tags
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Consumer.consent.provided
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Submitted.via
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ZIP3
+</td>
+<td style="text-align:right;">
+961
+</td>
+<td style="text-align:right;">
+13141
+</td>
+</tr>
+</tbody>
+</table>
+<div id="mean-encoding-function" class="section level3">
+<h3><span class="header-section-number">3.3.1</span> <em>Mean Encoding</em> Function</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">my_MeanEncoding &lt;-<span class="st"> </span><span class="cf">function</span>(df,var,<span class="dt">k=</span><span class="dv">2</span>,<span class="dt">f=</span><span class="dv">1</span>,<span class="dt">test.df=</span><span class="ot">NULL</span>){
+
+<span class="kw">data.table</span>(df)[, {mean_p =<span class="st"> </span><span class="kw">sum</span>(y);
+                     total=.N;
+                     mean_p=mean_p<span class="op">/</span>total;
+                     <span class="kw">list</span>(<span class="dt">mean_p=</span>mean_p,
+                          <span class="dt">var_key=</span><span class="kw">get</span>(var),
+                          <span class="dt">y =</span> y)}][
+                                   ,{temp =<span class="st"> </span>.N; 
+                                   bct =<span class="st"> </span><span class="kw">sum</span>(y);
+                                   pct =<span class="st"> </span>bct<span class="op">/</span>temp;
+                                   var_mean =<span class="st"> </span>mean_p<span class="op">/</span>(<span class="dv">1</span><span class="op">+</span><span class="kw">exp</span>((temp<span class="op">-</span>k)<span class="op">/</span>f)) <span class="op">+</span><span class="st"> </span>pct <span class="op">*</span>(<span class="dv">1</span><span class="op">-</span><span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span><span class="op">+</span><span class="kw">exp</span>((temp<span class="op">-</span>k)<span class="op">/</span>f)));
+                                   <span class="kw">list</span>(<span class="dt">var_mean =</span> var_mean,<span class="dt">mean_p =</span> mean_p,<span class="dt">tot=</span>temp,<span class="dt">var =</span> var_key)},by =<span class="st"> </span>var_key]-&gt;<span class="st"> </span>dt_mean_tr
+         
+        <span class="cf">if</span>(<span class="kw">is.null</span>(test.df)){test.df =<span class="st"> </span><span class="kw">data.table</span>(df)}
+                <span class="kw">require</span>(dplyr)
+                <span class="kw">require</span>(tidyr)
+                <span class="kw">require</span>(NLP)
+                mean_p_forna =<span class="st"> </span>dt_mean_tr<span class="op">$</span>mean_p[<span class="dv">1</span>]
+                lookup &lt;-<span class="st"> </span><span class="kw">unique</span>(dt_mean_tr)
+                test.df <span class="op">%&gt;%</span>
+<span class="st">                        </span><span class="kw">mutate</span>(<span class="dt">var_key =</span> <span class="kw">get</span>(var))<span class="op">%&gt;%</span>
+<span class="st">                        </span><span class="kw">left_join</span>(lookup, <span class="dt">by =</span> <span class="st">&quot;var_key&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">                         </span><span class="kw">mutate_at</span>(<span class="st">&quot;var_mean&quot;</span>,<span class="kw">funs</span>(<span class="kw">ifelse</span>(<span class="kw">is.na</span>(.),mean_p_forna,.)))-&gt;dt_mean_te
+        
+                <span class="kw">return</span>(dt_mean_te[,<span class="st">&quot;var_mean&quot;</span>])
+}</code></pre></div>
+<p>Before applying the mead encoder to high cardinality variables, the data set should be partitioned into train and test sets. And then use mean encoder in train set followed by mapping encoding numbers to test sets</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">310</span>)
+n =<span class="st"> </span><span class="kw">dim</span>(dat)[<span class="dv">1</span>]
+s =<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span>n,<span class="kw">round</span>(<span class="fl">0.7</span><span class="op">*</span>n),<span class="dt">replace =</span><span class="ot">FALSE</span>)
+dat.train =<span class="st"> </span>dat[s,]
+dat.test =<span class="st"> </span>dat[<span class="op">-</span>s,]
+##Variables with more than 20 levels will use mean encoding 
+meanEncode_var &lt;-<span class="st"> </span><span class="kw">rownames</span>(tbl.cat[tbl.cat<span class="op">$</span>levels <span class="op">&gt;</span><span class="dv">20</span>,])
+dat.train1 &lt;-<span class="st"> </span>dat.train 
+<span class="cf">for</span> (var <span class="cf">in</span> meanEncode_var){
+        dat.train[,var] =<span class="st"> </span><span class="kw">my_MeanEncoding</span>(<span class="dt">df=</span>dat.train1,<span class="dt">var=</span>var)
+        dat.test[,var] =<span class="st"> </span><span class="kw">my_MeanEncoding</span>(<span class="dt">df=</span>dat.train1,<span class="dt">var=</span>var,<span class="dt">test.df =</span>dat.test)
+       
+}</code></pre></div>
+</div>
+<div id="one-hot-encoding-for-rest-of-the-low-levels-nomial-variables." class="section level3">
+<h3><span class="header-section-number">3.3.2</span> <em>One hot encoding</em> for rest of the low levels nomial variables.</h3>
+<p>(This step can be skipped when we use H2o platform, which has variable encoding algorithm embeded in the machine learning.)</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ohe_feats =<span class="st"> </span><span class="kw">names</span>(dat.cat[,<span class="op">!</span><span class="kw">names</span>(dat.cat) <span class="op">%in%</span><span class="st"> </span>meanEncode_var])
+dat.train[,ohe_feats] &lt;-<span class="st"> </span>dat.train[,ohe_feats] <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate_all</span>(<span class="kw">funs</span>(<span class="kw">ifelse</span>(<span class="kw">is.na</span>(.),<span class="st">&quot;Missing&quot;</span>,.)))
+dat.test[,ohe_feats] &lt;-<span class="st"> </span>dat.test[,ohe_feats] <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate_all</span>(<span class="kw">funs</span>(<span class="kw">ifelse</span>(<span class="kw">is.na</span>(.),<span class="st">&quot;Missing&quot;</span>,.)))
+
+<span class="cf">for</span> (f <span class="cf">in</span> ohe_feats){
+  dat.dummy &lt;-<span class="st"> </span><span class="kw">with</span>(dat.train,
+       <span class="kw">data.frame</span>(<span class="kw">model.matrix</span>(<span class="op">~</span><span class="kw">get</span>(f)<span class="op">-</span><span class="dv">1</span>,dat.train)))
+       <span class="kw">names</span>(dat.dummy) &lt;-<span class="st"> </span><span class="kw">gsub</span>(<span class="st">&quot;get.f&quot;</span>,f,<span class="kw">names</span>(dat.dummy)) 
+       dat.train =<span class="st"> </span><span class="kw">cbind</span>(dat.train, dat.dummy)
+}
+dat.train &lt;-<span class="st"> </span><span class="kw">data.table</span>(dat.train)[,ohe_feats[<span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(ohe_feats)]<span class="op">:</span><span class="er">=</span><span class="ot">NULL</span>][,var.drop[<span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(var.drop)] <span class="op">:</span><span class="er">=</span><span class="ot">NULL</span>]
+dat.train &lt;-<span class="st"> </span>dat.train <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(y,<span class="kw">everything</span>())<span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate_at</span>(<span class="st">&quot;y&quot;</span>, <span class="kw">funs</span>(<span class="kw">as.factor</span>(.)))
+
+<span class="cf">for</span> (f <span class="cf">in</span> ohe_feats){
+  dat.dummy &lt;-<span class="st"> </span><span class="kw">with</span>(dat.test,
+       <span class="kw">data.frame</span>(<span class="kw">model.matrix</span>(<span class="op">~</span><span class="kw">get</span>(f)<span class="op">-</span><span class="dv">1</span>,dat.test)))
+       <span class="kw">names</span>(dat.dummy) &lt;-<span class="st"> </span><span class="kw">gsub</span>(<span class="st">&quot;get.f&quot;</span>,f,<span class="kw">names</span>(dat.dummy)) 
+       dat.test =<span class="st"> </span><span class="kw">cbind</span>(dat.test, dat.dummy)
+}
+dat.test &lt;-<span class="st"> </span><span class="kw">data.table</span>(dat.test)[,ohe_feats[<span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(ohe_feats)]<span class="op">:</span><span class="er">=</span><span class="ot">NULL</span>][,var.drop[<span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(var.drop)] <span class="op">:</span><span class="er">=</span><span class="ot">NULL</span>]
+
+dat.test &lt;-<span class="st"> </span>dat.test <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(y,<span class="kw">everything</span>())<span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate_at</span>(<span class="st">&quot;y&quot;</span>, <span class="kw">funs</span>(<span class="kw">as.factor</span>(.)))</code></pre></div>
+<p>check the final model set</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(<span class="kw">is.na</span>(dat.train))</code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(<span class="kw">is.na</span>(dat.test))</code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dim</span>(dat.train)</code></pre></div>
+<pre><code>## [1] 625716     50</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dim</span>(dat.test)</code></pre></div>
+<pre><code>## [1] 268164     50</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(dat.train)</code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    625716 obs. of  50 variables:
+##  $ y                                                                                   : Factor w/ 2 levels &quot;0&quot;,&quot;1&quot;: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ Sub.product                                                                         : num  0.02072 0.02072 0.00794 0.0856 0.02077 ...
+##  $ Issue                                                                               : num  0.01922 0.01922 0.00208 0.03594 0.01922 ...
+##  $ Sub.issue                                                                           : num  0.02234 0.02234 0.00191 0.03395 0.02234 ...
+##  $ Company                                                                             : num  0.00293 0.021301 0.000123 0.021696 0.001821 ...
+##  $ State                                                                               : num  0.0313 0.0227 0.0286 0.03 0.0347 ...
+##  $ Process.time                                                                        : num  0 0 16 0 2 0 0 0 6 2 ...
+##  $ ZIP3                                                                                : num  0.0465 0.0223 0.0349 0.0255 0.0337 ...
+##  $ negative                                                                            : num  14 0 0 0 0 0 0 14 1 0 ...
+##  $ positive                                                                            : num  5 0 0 0 0 0 0 5 0 0 ...
+##  $ date.r.year                                                                         : num  2016 2015 2014 2017 2012 ...
+##  $ date.r.mon                                                                          : num  3 2 9 8 6 9 1 5 10 12 ...
+##  $ date.r.day                                                                          : int  10 26 29 25 20 18 15 11 7 27 ...
+##  $ date.r.weekd                                                                        : num  5 5 2 6 4 2 5 4 6 5 ...
+##  $ date.s.year                                                                         : num  2016 2015 2014 2017 2012 ...
+##  $ date.s.mon                                                                          : num  3 2 10 8 6 9 1 5 10 12 ...
+##  $ date.s.day                                                                          : int  10 26 15 25 22 18 15 11 13 29 ...
+##  $ date.s.weekd                                                                        : num  5 5 4 6 6 2 5 4 5 7 ...
+##  $ Product.Bank.account.or.service                                                     : num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ Product.Checking.or.savings.account                                                 : num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ Product.Consumer.Loan                                                               : num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ Product.Credit.card                                                                 : num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ Product.Credit.card.or.prepaid.card                                                 : num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ Product.Credit.reporting                                                            : num  0 0 1 0 0 0 0 0 0 0 ...
+##  $ Product.Credit.reporting..credit.repair.services..or.other.personal.consumer.reports: num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ Product.Debt.collection                                                             : num  0 0 0 1 0 0 0 1 0 0 ...
+##  $ Product.Money.transfer..virtual.currency..or.money.service                          : num  0 0 0 0 0 1 0 0 0 0 ...
+##  $ Product.Money.transfers                                                             : num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ Product.Mortgage                                                                    : num  1 1 0 0 1 0 1 0 1 1 ...
+##  $ Product.Other.financial.service                                                     : num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ Product.Payday.loan                                                                 : num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ Product.Payday.loan..title.loan..or.personal.loan                                   : num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ Product.Prepaid.card                                                                : num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ Product.Student.loan                                                                : num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ Product.Vehicle.loan.or.lease                                                       : num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ Product.Virtual.currency                                                            : num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ Tags.Major                                                                          : num  1 1 1 1 1 1 1 1 1 1 ...
+##  $ Tags.Older.American                                                                 : num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ Tags.Older.American..Servicemember                                                  : num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ Tags.Servicemember                                                                  : num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ Consumer.consent.provided.Consent.not.provided                                      : num  0 0 0 1 0 0 0 0 0 0 ...
+##  $ Consumer.consent.provided.Consent.provided                                          : num  1 0 0 0 0 0 0 1 1 0 ...
+##  $ Consumer.consent.provided.Consent.withdrawn                                         : num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ Consumer.consent.provided.Other                                                     : num  0 1 1 0 1 1 1 0 0 1 ...
+##  $ Submitted.via.Email                                                                 : num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ Submitted.via.Fax                                                                   : num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ Submitted.via.Phone                                                                 : num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ Submitted.via.Postal.mail                                                           : num  0 0 1 0 0 0 0 0 0 0 ...
+##  $ Submitted.via.Referral                                                              : num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ Submitted.via.Web                                                                   : num  1 1 0 1 1 1 1 1 1 1 ...</code></pre>
+</div>
+</div>
+</div>
+<div id="model-estimation" class="section level1">
+<h1><span class="header-section-number">4</span> Model Estimation</h1>
+<p>In order to speed up the model estimation process, I’m going to run the model on H2O. I’m going to try the ensemble method. So instead of loading regular <em>h2o</em>, I loaded <em>h2oEnsemble</em>, which will load the <em>h2o</em> R package as well.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(h2oEnsemble)
+<span class="kw">h2o.init</span>(<span class="dt">nthreads=</span><span class="op">-</span><span class="dv">1</span>)</code></pre></div>
+<pre><code>## 
+## H2O is not running yet, starting it now...
+## 
+## Note:  In case of errors look at the following log files:
+##     C:\Users\luxua\AppData\Local\Temp\RtmpS2PuMm/h2o_luxua_started_from_r.out
+##     C:\Users\luxua\AppData\Local\Temp\RtmpS2PuMm/h2o_luxua_started_from_r.err
+## 
+## 
+## Starting H2O JVM and connecting: . Connection successful!
+## 
+## R is connected to the H2O cluster: 
+##     H2O cluster uptime:         3 seconds 526 milliseconds 
+##     H2O cluster version:        3.16.0.2 
+##     H2O cluster version age:    2 months  
+##     H2O cluster name:           H2O_started_from_R_luxua_wmd674 
+##     H2O cluster total nodes:    1 
+##     H2O cluster total memory:   1.75 GB 
+##     H2O cluster total cores:    4 
+##     H2O cluster allowed cores:  4 
+##     H2O cluster healthy:        TRUE 
+##     H2O Connection ip:          localhost 
+##     H2O Connection port:        54321 
+##     H2O Connection proxy:       NA 
+##     H2O Internal Security:      FALSE 
+##     H2O API Extensions:         Algos, AutoML, Core V3, Core V4 
+##     R Version:                  R version 3.4.2 (2017-09-28)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tr.hex &lt;-<span class="st"> </span><span class="kw">as.h2o</span>(dat.train, <span class="dt">destination_frame=</span><span class="st">&quot;tr.hex&quot;</span>)</code></pre></div>
+<pre><code>## 
+  |                                                                       
+  |                                                                 |   0%
+  |                                                                       
+  |=================================================================| 100%</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">te.hex &lt;-<span class="st"> </span><span class="kw">as.h2o</span>(dat.test, <span class="dt">destination_frame=</span><span class="st">&quot;te.hex&quot;</span>)</code></pre></div>
+<pre><code>## 
+  |                                                                       
+  |                                                                 |   0%
+  |                                                                       
+  |=================================================================| 100%</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">nfolds =<span class="st"> </span><span class="dv">2</span></code></pre></div>
+<div id="glm-l1" class="section level2">
+<h2><span class="header-section-number">4.1</span> Glm L1</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">base_glm &lt;-<span class="st"> </span><span class="kw">h2o.glm</span>(<span class="dt">x=</span><span class="dv">2</span><span class="op">:</span><span class="dv">50</span>, <span class="dt">y=</span><span class="dv">1</span>, 
+               <span class="dt">training_frame =</span> tr.hex, 
+               <span class="dt">family =</span> <span class="st">&quot;binomial&quot;</span>,
+               <span class="dt">link =</span> <span class="st">&quot;logit&quot;</span>,
+               <span class="dt">alpha =</span> <span class="fl">0.01</span>,
+               <span class="dt">nfolds=</span> nfolds,
+               <span class="dt">lambda_search =</span> <span class="ot">TRUE</span>,
+               <span class="dt">fold_assignment =</span> <span class="st">&quot;Modulo&quot;</span>,
+               <span class="dt">keep_cross_validation_predictions =</span> <span class="ot">TRUE</span>)
+<span class="co">#mdl</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">perf &lt;-<span class="st"> </span><span class="kw">h2o.performance</span>(base_glm)
+<span class="kw">h2o.auc</span>(perf)</code></pre></div>
+<pre><code>## [1] 0.8859515</code></pre>
+</div>
+<div id="random-forest" class="section level2">
+<h2><span class="header-section-number">4.2</span> Random Forest</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">base_rf &lt;-<span class="st"> </span><span class="kw">h2o.randomForest</span>(<span class="dt">x =</span> <span class="dv">2</span><span class="op">:</span><span class="dv">50</span>,
+                          <span class="dt">y =</span> <span class="dv">1</span>,
+                          <span class="dt">training_frame =</span> tr.hex,
+                          <span class="dt">nfolds =</span> nfolds,
+                          <span class="dt">fold_assignment =</span> <span class="st">&quot;Modulo&quot;</span>,
+                          <span class="dt">distribution =</span> <span class="st">&quot;bernoulli&quot;</span>,
+                          <span class="dt">keep_cross_validation_predictions =</span> <span class="ot">TRUE</span>,
+                          <span class="dt">seed =</span> <span class="dv">310</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">perf &lt;-<span class="st"> </span><span class="kw">h2o.performance</span>(base_rf)
+<span class="kw">h2o.auc</span>(perf)</code></pre></div>
+<pre><code>## [1] 0.9387079</code></pre>
+</div>
+<div id="gbm" class="section level2">
+<h2><span class="header-section-number">4.3</span> GBM</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">base_gbm &lt;-<span class="st"> </span><span class="kw">h2o.gbm</span>(<span class="dt">x =</span> <span class="dv">2</span><span class="op">:</span><span class="dv">50</span>,
+                  <span class="dt">y =</span> <span class="dv">1</span>,
+                  <span class="dt">training_frame =</span> tr.hex,
+                  <span class="dt">distribution =</span> <span class="st">&quot;bernoulli&quot;</span>,
+                  <span class="dt">max_depth =</span> <span class="dv">3</span>,
+                  <span class="dt">min_rows =</span> <span class="dv">2</span>,
+                  <span class="dt">learn_rate =</span> <span class="fl">0.2</span>,
+                  <span class="dt">nfolds =</span> nfolds,
+                  <span class="dt">fold_assignment =</span> <span class="st">&quot;Modulo&quot;</span>,
+                  <span class="dt">keep_cross_validation_predictions =</span> <span class="ot">TRUE</span>,
+                  <span class="dt">seed =</span> <span class="dv">310</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">perf &lt;-<span class="st"> </span><span class="kw">h2o.performance</span>(base_gbm)
+<span class="kw">h2o.auc</span>(perf)</code></pre></div>
+<pre><code>## [1] 0.9428524</code></pre>
+</div>
+<div id="neural-network-deep-learning" class="section level2">
+<h2><span class="header-section-number">4.4</span> Neural Network (Deep Learning)</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">base_dl &lt;-<span class="st"> </span><span class="kw">h2o.deeplearning</span>(<span class="dt">x =</span> <span class="dv">2</span><span class="op">:</span><span class="dv">50</span>,
+                          <span class="dt">y =</span> <span class="dv">1</span>,
+                          <span class="dt">training_frame =</span> tr.hex,
+                          <span class="dt">l1 =</span> <span class="fl">0.001</span>,
+                          <span class="dt">l2 =</span> <span class="fl">0.001</span>,
+                          <span class="dt">hidden =</span> <span class="kw">c</span>(<span class="dv">200</span>, <span class="dv">200</span>, <span class="dv">200</span>),
+                          <span class="dt">nfolds =</span> nfolds,
+                          <span class="dt">fold_assignment =</span> <span class="st">&quot;Modulo&quot;</span>,
+                          <span class="dt">keep_cross_validation_predictions =</span> <span class="ot">TRUE</span>,
+                          <span class="dt">seed =</span> <span class="dv">310</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">perf &lt;-<span class="st"> </span><span class="kw">h2o.performance</span>(base_dl)
+<span class="kw">h2o.auc</span>(perf)</code></pre></div>
+<pre><code>## [1] 0.8539915</code></pre>
+</div>
+<div id="stack-ensemble-models" class="section level2">
+<h2><span class="header-section-number">4.5</span> Stack Ensemble models</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Train a stacked ensemble using the H2O and XGBoost models from above</span>
+base_models &lt;-<span class="st"> </span><span class="kw">list</span>(base_glm<span class="op">@</span>model_id,base_gbm<span class="op">@</span>model_id, 
+                    base_rf<span class="op">@</span>model_id, base_dl<span class="op">@</span>model_id)
+
+ensemble &lt;-<span class="st"> </span><span class="kw">h2o.stackedEnsemble</span>(<span class="dt">x =</span> <span class="dv">2</span><span class="op">:</span><span class="dv">50</span>,
+                                <span class="dt">y =</span> <span class="dv">1</span>,
+                                <span class="dt">training_frame =</span> tr.hex,
+                                <span class="dt">base_models =</span> base_models)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Eval ensemble performance on a test set</span>
+perf &lt;-<span class="st"> </span><span class="kw">h2o.performance</span>(ensemble, <span class="dt">newdata =</span> te.hex)
+
+
+<span class="co"># Compare to base learner performance on the test set</span>
+get_auc &lt;-<span class="st"> </span><span class="cf">function</span>(mm) <span class="kw">h2o.auc</span>(<span class="kw">h2o.performance</span>(<span class="kw">h2o.getModel</span>(mm), <span class="dt">newdata =</span> te.hex))
+baselearner_aucs &lt;-<span class="st"> </span><span class="kw">sapply</span>(base_models, get_auc)
+baselearner_aucs</code></pre></div>
+<pre><code>## [1] 0.8603359 0.9134555 0.9239445 0.8273576</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">baselearner_best_auc_test &lt;-<span class="st"> </span><span class="kw">max</span>(baselearner_aucs)
+baselearner_best_auc_test</code></pre></div>
+<pre><code>## [1] 0.9239445</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ensemble_auc_test &lt;-<span class="st"> </span><span class="kw">h2o.auc</span>(perf)
+ensemble_auc_test</code></pre></div>
+<pre><code>## [1] 0.9257655</code></pre>
+<p>```</p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
